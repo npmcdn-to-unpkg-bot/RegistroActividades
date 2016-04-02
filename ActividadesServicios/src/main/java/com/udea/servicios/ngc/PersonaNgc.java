@@ -20,6 +20,10 @@ public class PersonaNgc implements PersonaNgcInt {
 	@Autowired
 	PersonaDaoInt personaDao;
 
+	public void setPersonaDao(PersonaDaoInt personaDao) {
+		this.personaDao = personaDao;
+	}
+
 	@RequestMapping(value = "/registrar", method = RequestMethod.POST)
 	public void crearPersona(@RequestBody Persona persona) throws ExcepcionNgc {
 		try {

@@ -42,7 +42,7 @@
 	</bean>	
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
-	<bean id="beanPersonaNgc" class="com.udea.servicios.ngc.PersonaNgc">
+	<bean id="beanPersonaNgc" class="com.udea.servicios.ngc.PersonaNgc" scope="singleton">
 		<property name="personaDao" ref="personaDaoPers"></property>
 	</bean>
 
