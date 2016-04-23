@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38A430FF-A830-06D3-9B73-2ED2CD164A73" name="SemestreCurso">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38A430FF-A830-06D3-9B73-2ED2CD164A73" name="TB_SEMESTRE_CURSO">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 11:29:44 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="355199E5-6071-8CD9-D0EC-4C536380297E">
+<Column name="NB_Id" id="355199E5-6071-8CD9-D0EC-4C536380297E">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 11:30:22 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdCurso" id="C1DE8898-59AE-9DE4-B201-5D6FADA08FCE">
+<Column name="NB_IdCurso" id="C1DE8898-59AE-9DE4-B201-5D6FADA08FCE">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 11:31:19 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -32,7 +32,7 @@
 <colAssociation fkAssociation="7D64F68E-9AC1-05AE-BE32-003BA4950884" referredColumn="9E384148-037E-A53A-EB3C-E35CDD386C2F"/>
 </associations>
 </Column>
-<Column name="IdGrupo" id="312ED82C-11A3-102E-8D5A-8F1145ED991B">
+<Column name="NB_IdGrupo" id="312ED82C-11A3-102E-8D5A-8F1145ED991B">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 11:31:54 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -46,7 +46,7 @@
 <colAssociation fkAssociation="F74B4EBB-94D3-34E8-9857-F4AE056EC4AF" referredColumn="AD7092D5-2032-C21C-2956-71E35E74E50A"/>
 </associations>
 </Column>
-<Column name="IdSemestre" id="09C21F2D-D64D-8EF7-3981-A987AADFB3A1">
+<Column name="NB_IdSemestre" id="09C21F2D-D64D-8EF7-3981-A987AADFB3A1">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 11:32:25 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>

@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="B89C791B-20FE-BF84-DEBC-E263E8A78554" name="Curso" seqName="seg_0"/>
-   <object objectType="Table" objectID="9EC8ACA1-4F19-49D7-E333-B540CD34CEA0" name="DependenciaAcademica" seqName="seg_0"/>
    <object objectType="Table" objectID="E315B55D-E432-CB66-97D4-F859B6C0B197" name="Docente" seqName="seg_0"/>
-   <object objectType="Table" objectID="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" name="DocenteSemestreCurso" seqName="seg_0"/>
-   <object objectType="Table" objectID="A9FE440B-46DA-D680-5641-8E198D535651" name="Grupo" seqName="seg_0"/>
-   <object objectType="Table" objectID="CD2DAEEB-C7FB-1E66-C3B2-3B4F806EF695" name="Persona" seqName="seg_0"/>
-   <object objectType="Table" objectID="DA53A8C0-4495-A44B-CA91-1370DE02F2A5" name="Semestre" seqName="seg_0"/>
-   <object objectType="Table" objectID="38A430FF-A830-06D3-9B73-2ED2CD164A73" name="SemestreCurso" seqName="seg_0"/>
-   <object objectType="Table" objectID="4AEF3E5B-EBE5-565B-B9CA-4AA89E647B8D" name="TB_REPORTEACTIVIDAD" seqName="seg_0"/>
-   <object objectType="Table" objectID="EFF6AC21-3F03-3A58-61FF-439A8895C3C6" name="TipoActividad" seqName="seg_0"/>
-   <object objectType="Table" objectID="D05925B7-F080-F8C4-7544-FDC5C7BBECC0" name="TipoIdentificacion" seqName="seg_0"/>
+   <object objectType="Table" objectID="B89C791B-20FE-BF84-DEBC-E263E8A78554" name="TB_CURSO" seqName="seg_0"/>
+   <object objectType="Table" objectID="9EC8ACA1-4F19-49D7-E333-B540CD34CEA0" name="TB_DEPENDENCIA_ACADEMICA" seqName="seg_0"/>
+   <object objectType="Table" objectID="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" name="TB_DOCENTE_SEMESTRE_CURSO" seqName="seg_0"/>
+   <object objectType="Table" objectID="A9FE440B-46DA-D680-5641-8E198D535651" name="TB_GRUPO" seqName="seg_0"/>
+   <object objectType="Table" objectID="CD2DAEEB-C7FB-1E66-C3B2-3B4F806EF695" name="TB_PERSONA" seqName="seg_0"/>
+   <object objectType="Table" objectID="4AEF3E5B-EBE5-565B-B9CA-4AA89E647B8D" name="TB_REPORTE_ACTIVIDAD" seqName="seg_0"/>
+   <object objectType="Table" objectID="DA53A8C0-4495-A44B-CA91-1370DE02F2A5" name="TB_SEMESTRE" seqName="seg_0"/>
+   <object objectType="Table" objectID="38A430FF-A830-06D3-9B73-2ED2CD164A73" name="TB_SEMESTRE_CURSO" seqName="seg_0"/>
+   <object objectType="Table" objectID="EFF6AC21-3F03-3A58-61FF-439A8895C3C6" name="TB_TIPO_ACTIVIDAD" seqName="seg_0"/>
+   <object objectType="Table" objectID="D05925B7-F080-F8C4-7544-FDC5C7BBECC0" name="TB_TIPO_IDENTIFICACION" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="BF80A754-0D8A-040B-0367-E84668034A35" name="Curso_Curso_FK" seqName="seg_0" containerID="B89C791B-20FE-BF84-DEBC-E263E8A78554" refContainerID="9EC8ACA1-4F19-49D7-E333-B540CD34CEA0"/>
    <object objectType="FKIndexAssociation" objectID="AA1200A4-B37E-686E-E9C9-B7822DE999CA" name="DocSemCurso_Docente_FK" seqName="seg_0" containerID="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" refContainerID="E315B55D-E432-CB66-97D4-F859B6C0B197"/>
    <object objectType="FKIndexAssociation" objectID="CFE37A87-8F70-BE70-F9CB-EFFD02865F43" name="DocSemCurso_SemCur_FK" seqName="seg_0" containerID="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" refContainerID="38A430FF-A830-06D3-9B73-2ED2CD164A73"/>

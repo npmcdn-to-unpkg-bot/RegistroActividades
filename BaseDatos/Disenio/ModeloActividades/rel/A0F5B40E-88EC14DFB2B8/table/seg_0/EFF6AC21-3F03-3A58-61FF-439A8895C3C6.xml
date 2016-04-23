@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFF6AC21-3F03-3A58-61FF-439A8895C3C6" name="TipoActividad">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFF6AC21-3F03-3A58-61FF-439A8895C3C6" name="TB_TIPO_ACTIVIDAD">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:27:00 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="A8354D74-698C-211F-F818-2DDA2E04CFA9">
+<Column name="NB_Id" id="A8354D74-698C-211F-F818-2DDA2E04CFA9">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:28:18 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nombre" id="24D57757-75F7-0EDD-1F69-596FCC1FEBD7">
+<Column name="VR_Nombre" id="24D57757-75F7-0EDD-1F69-596FCC1FEBD7">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:28:18 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -29,7 +29,7 @@
 <ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Descripcion" id="30AA547E-7770-387D-FB4F-BA3AF31FFD2D">
+<Column name="VR_Descripcion" id="30AA547E-7770-387D-FB4F-BA3AF31FFD2D">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:28:18 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>

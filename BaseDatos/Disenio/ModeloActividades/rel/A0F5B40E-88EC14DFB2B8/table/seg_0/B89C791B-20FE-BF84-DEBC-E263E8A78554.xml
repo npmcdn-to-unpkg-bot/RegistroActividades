@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B89C791B-20FE-BF84-DEBC-E263E8A78554" name="Curso">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B89C791B-20FE-BF84-DEBC-E263E8A78554" name="TB_CURSO">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:29:17 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="9E384148-037E-A53A-EB3C-E35CDD386C2F">
+<Column name="NB_Id" id="9E384148-037E-A53A-EB3C-E35CDD386C2F">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:31:32 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Codigo" id="A0D1B2D9-271F-8DD9-CF8C-77587477B9A1">
+<Column name="VR_Codigo" id="A0D1B2D9-271F-8DD9-CF8C-77587477B9A1">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:31:32 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -29,7 +29,7 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nombre" id="9A5FDDDC-524D-059C-9395-9BE84DCB3881">
+<Column name="VR_Nombre" id="9A5FDDDC-524D-059C-9395-9BE84DCB3881">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:31:32 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -41,7 +41,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdCurso" id="98F4220B-64D4-714E-B7B3-CB536A5DAB6F">
+<Column name="NB_IdCurso" id="98F4220B-64D4-714E-B7B3-CB536A5DAB6F">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:35:09 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>

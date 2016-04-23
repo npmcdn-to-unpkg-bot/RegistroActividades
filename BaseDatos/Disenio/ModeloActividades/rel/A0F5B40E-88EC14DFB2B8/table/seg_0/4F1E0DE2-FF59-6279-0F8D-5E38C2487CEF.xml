@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" name="DocenteSemestreCurso">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F1E0DE2-FF59-6279-0F8D-5E38C2487CEF" name="TB_DOCENTE_SEMESTRE_CURSO">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:19:23 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="4A7B8D5E-FFC0-FB0E-195C-6243394F5EF5">
+<Column name="NB_Id" id="4A7B8D5E-FFC0-FB0E-195C-6243394F5EF5">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:20:01 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,12,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdDocente" id="00E27F13-5A5D-2590-0428-3D10E111B03A">
+<Column name="NB_IdDocente" id="00E27F13-5A5D-2590-0428-3D10E111B03A">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:20:25 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -32,7 +32,7 @@
 <colAssociation fkAssociation="AA1200A4-B37E-686E-E9C9-B7822DE999CA" referredColumn="2DBD689B-857F-C0B6-F5D3-D0CC2EB4E87A"/>
 </associations>
 </Column>
-<Column name="IdSemestreCurso" id="18AE3D39-18C2-FF6E-3F5B-A0C233826483">
+<Column name="NB_IdSemestreCurso" id="18AE3D39-18C2-FF6E-3F5B-A0C233826483">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:20:46 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D05925B7-F080-F8C4-7544-FDC5C7BBECC0" name="TipoIdentificacion">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D05925B7-F080-F8C4-7544-FDC5C7BBECC0" name="TB_TIPO_IDENTIFICACION">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:46:03 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="AC1BBA83-2981-BBC6-5354-90A8886EF38C">
+<Column name="NB_Id" id="AC1BBA83-2981-BBC6-5354-90A8886EF38C">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:47:07 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,1,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Descripcion" id="F334C5BB-B5C6-5633-9F9E-A3A204F23DC9">
+<Column name="VR_Descripcion" id="F334C5BB-B5C6-5633-9F9E-A3A204F23DC9">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:47:53 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>

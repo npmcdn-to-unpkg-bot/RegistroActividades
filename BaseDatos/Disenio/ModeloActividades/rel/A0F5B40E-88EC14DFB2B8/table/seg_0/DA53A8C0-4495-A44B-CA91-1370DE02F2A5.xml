@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA53A8C0-4495-A44B-CA91-1370DE02F2A5" name="Semestre">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA53A8C0-4495-A44B-CA91-1370DE02F2A5" name="TB_SEMESTRE">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:51:13 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="05E9FEF9-DEA3-03DE-4ED9-F18F9B151CF3">
+<Column name="NB_Id" id="05E9FEF9-DEA3-03DE-4ED9-F18F9B151CF3">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:51:40 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Anio" id="2A29C54B-ED6A-DD37-B0A0-802828DA6C5E">
+<Column name="NB_Año" id="2A29C54B-ED6A-DD37-B0A0-802828DA6C5E">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:52:05 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -30,7 +30,7 @@
 <ownDataTypeParameters>,4,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Periodo" id="08E4B7F5-521B-60AF-9CE2-306923FE3D21">
+<Column name="NB_Periodo" id="08E4B7F5-521B-60AF-9CE2-306923FE3D21">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:53:19 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>

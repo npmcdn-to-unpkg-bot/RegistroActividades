@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD2DAEEB-C7FB-1E66-C3B2-3B4F806EF695" name="Persona">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD2DAEEB-C7FB-1E66-C3B2-3B4F806EF695" name="TB_PERSONA">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:38:17 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="C414F5A5-3100-05FA-8853-A1EE88F1D5A7">
+<Column name="NB_Id" id="C414F5A5-3100-05FA-8853-A1EE88F1D5A7">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,15,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdTipoIdentificacion" id="9B5A0D67-5ADE-4D81-C650-6BCC4BEB91CC">
+<Column name="NB_IdTipoIdentificacion" id="9B5A0D67-5ADE-4D81-C650-6BCC4BEB91CC">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -33,7 +33,7 @@
 <colAssociation fkAssociation="F037FA49-F172-D265-6F85-EFA41EB95739" referredColumn="AC1BBA83-2981-BBC6-5354-90A8886EF38C"/>
 </associations>
 </Column>
-<Column name="Identificacion" id="6683A99F-6D40-01CC-A8F8-4026A4A31391">
+<Column name="VR_Identificacion" id="6683A99F-6D40-01CC-A8F8-4026A4A31391">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -44,7 +44,7 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nombres" id="34ACD7B1-EBC4-98A6-CE91-93EB956B674D">
+<Column name="VR_Nombres" id="34ACD7B1-EBC4-98A6-CE91-93EB956B674D">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -55,7 +55,7 @@
 <ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Apellidos" id="E1887815-F4F0-EC3D-2DA9-6AF6BE6C571E">
+<Column name="VR_Apellidos" id="E1887815-F4F0-EC3D-2DA9-6AF6BE6C571E">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -66,7 +66,7 @@
 <ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Telefono" id="F93A1F5A-97FB-DDD6-BB34-D00D44F5AFEE">
+<Column name="VR_Telefono" id="F93A1F5A-97FB-DDD6-BB34-D00D44F5AFEE">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -78,7 +78,7 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Email" id="BC88232A-D08F-F663-0C94-DF679843CDA5">
+<Column name="VR_Email" id="BC88232A-D08F-F663-0C94-DF679843CDA5">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 01:45:30 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
