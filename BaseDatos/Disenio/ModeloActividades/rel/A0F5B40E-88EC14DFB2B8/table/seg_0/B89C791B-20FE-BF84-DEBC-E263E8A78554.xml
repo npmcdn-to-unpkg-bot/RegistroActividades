@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B89C791B-20FE-BF84-DEBC-E263E8A78554" name="Curso">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:29:17 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="9E384148-037E-A53A-EB3C-E35CDD386C2F">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:31:32 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Codigo" id="A0D1B2D9-271F-8DD9-CF8C-77587477B9A1">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:31:32 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="9A5FDDDC-524D-059C-9395-9BE84DCB3881">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:31:32 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdCurso" id="98F4220B-64D4-714E-B7B3-CB536A5DAB6F">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:35:09 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF80A754-0D8A-040B-0367-E84668034A35" referredColumn="256DC2F9-CE8B-4E80-D920-7BF7CA701217"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D5DE0652-1AB9-972C-9AEC-7B9E7A57476A" name="Curso_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:31:32 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E384148-037E-A53A-EB3C-E35CDD386C2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="546E2B07-D9B1-611D-53EF-34231A141FC1" name="Curso_Curso_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:35:09 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98F4220B-64D4-714E-B7B3-CB536A5DAB6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

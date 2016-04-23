@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD2DAEEB-C7FB-1E66-C3B2-3B4F806EF695" name="Persona">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:38:17 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="C414F5A5-3100-05FA-8853-A1EE88F1D5A7">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,15,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdTipoIdentificacion" id="9B5A0D67-5ADE-4D81-C650-6BCC4BEB91CC">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F037FA49-F172-D265-6F85-EFA41EB95739" referredColumn="AC1BBA83-2981-BBC6-5354-90A8886EF38C"/>
+</associations>
+</Column>
+<Column name="Identificacion" id="6683A99F-6D40-01CC-A8F8-4026A4A31391">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombres" id="34ACD7B1-EBC4-98A6-CE91-93EB956B674D">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellidos" id="E1887815-F4F0-EC3D-2DA9-6AF6BE6C571E">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="F93A1F5A-97FB-DDD6-BB34-D00D44F5AFEE">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="BC88232A-D08F-F663-0C94-DF679843CDA5">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E9B9E14-0970-10B3-76B9-9CCF5E113755" name="PERSONA_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:45:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C414F5A5-3100-05FA-8853-A1EE88F1D5A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="99433753-B2B1-E0D2-56E3-AF2ADFFF556C" name="Persona__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:38:52 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B5A0D67-5ADE-4D81-C650-6BCC4BEB91CC"/>
+<colUsage columnID="6683A99F-6D40-01CC-A8F8-4026A4A31391"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB946CCD-5AC9-D570-7510-9FDFC21459F4" name="Persona_TipoIdentificacion_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:02:23 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B5A0D67-5ADE-4D81-C650-6BCC4BEB91CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

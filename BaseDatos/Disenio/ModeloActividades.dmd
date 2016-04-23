@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ModeloActividades" id="096B43B8-BFFB-1754-1BB6-BCC4494D7608" version="3.5">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 01:36:21 UTC</createdTime>
+<ownerDesignName>Modelo Datos Actividades</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>096B43B8-BFFB-1754-1BB6-BCC4494D7608</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="096B43B8-BFFB-1754-1BB6-BCC4494D7608">
+<designStoragePath>D:\Box Sync\UdeA\Proyecto Integrador I\Modelo Datos Actividades</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

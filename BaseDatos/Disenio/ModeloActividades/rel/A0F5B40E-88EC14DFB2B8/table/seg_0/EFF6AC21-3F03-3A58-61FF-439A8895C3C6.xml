@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFF6AC21-3F03-3A58-61FF-439A8895C3C6" name="TipoActividad">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:27:00 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="A8354D74-698C-211F-F818-2DDA2E04CFA9">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:28:18 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="24D57757-75F7-0EDD-1F69-596FCC1FEBD7">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:28:18 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="30AA547E-7770-387D-FB4F-BA3AF31FFD2D">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:28:18 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150 BYTE</dataTypeSize>
+<ownDataTypeParameters>150 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="62C40D85-01B4-969D-BC56-FEE8B678D5C2" name="TipoActividad_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:28:18 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8354D74-698C-211F-F818-2DDA2E04CFA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="611451D6-44F8-1F3A-D34F-9F30272266F1" name="TipoActividad__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-23 00:40:17 UTC</createdTime>
+<ownerDesignName>ModeloActividades20160422</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="24D57757-75F7-0EDD-1F69-596FCC1FEBD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

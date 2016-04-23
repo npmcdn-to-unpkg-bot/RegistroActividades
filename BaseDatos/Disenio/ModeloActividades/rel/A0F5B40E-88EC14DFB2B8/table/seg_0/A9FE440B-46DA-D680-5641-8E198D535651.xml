@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A9FE440B-46DA-D680-5641-8E198D535651" name="Grupo">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:46:00 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="AD7092D5-2032-C21C-2956-71E35E74E50A">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:46:55 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Codigo" id="79445B94-61BE-4677-F92A-893F6900B707">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:46:55 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="C3E34E0E-C002-2E3F-E76C-E8DF670BAB00">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:47:53 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8ED59F08-986C-4EB9-F2D9-ADC1E52E2BCD" name="Grupo_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 02:46:55 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD7092D5-2032-C21C-2956-71E35E74E50A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

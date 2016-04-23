@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38A430FF-A830-06D3-9B73-2ED2CD164A73" name="SemestreCurso">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:29:44 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="355199E5-6071-8CD9-D0EC-4C536380297E">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:30:22 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdCurso" id="C1DE8898-59AE-9DE4-B201-5D6FADA08FCE">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:31:19 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D64F68E-9AC1-05AE-BE32-003BA4950884" referredColumn="9E384148-037E-A53A-EB3C-E35CDD386C2F"/>
+</associations>
+</Column>
+<Column name="IdGrupo" id="312ED82C-11A3-102E-8D5A-8F1145ED991B">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:31:54 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F74B4EBB-94D3-34E8-9857-F4AE056EC4AF" referredColumn="AD7092D5-2032-C21C-2956-71E35E74E50A"/>
+</associations>
+</Column>
+<Column name="IdSemestre" id="09C21F2D-D64D-8EF7-3981-A987AADFB3A1">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:32:25 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8AB9673B-8278-5849-E0DD-3B456E76914F" referredColumn="05E9FEF9-DEA3-03DE-4ED9-F18F9B151CF3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CBA2703C-0D4B-3AB5-D103-62A72CA672A0" name="SemestreCurso_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:33:11 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="355199E5-6071-8CD9-D0EC-4C536380297E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6B14859A-8FBB-53EB-8B42-65F15191CD92" name="SemestreCurso__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:33:44 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1DE8898-59AE-9DE4-B201-5D6FADA08FCE"/>
+<colUsage columnID="312ED82C-11A3-102E-8D5A-8F1145ED991B"/>
+<colUsage columnID="09C21F2D-D64D-8EF7-3981-A987AADFB3A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DECE3F2A-A415-70C5-8747-581ADB39A367" name="SemestreCurso_Curso_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:34:22 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1DE8898-59AE-9DE4-B201-5D6FADA08FCE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="690C3567-FBD7-345F-C31C-C27FA2EC7EC5" name="SemestreCurso_Grupo_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:34:42 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="312ED82C-11A3-102E-8D5A-8F1145ED991B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2DBC6C83-5A1C-B2A5-9238-0648515BC1AC" name="SemestreCurso_Semestre_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-22 11:34:56 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09C21F2D-D64D-8EF7-3981-A987AADFB3A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
