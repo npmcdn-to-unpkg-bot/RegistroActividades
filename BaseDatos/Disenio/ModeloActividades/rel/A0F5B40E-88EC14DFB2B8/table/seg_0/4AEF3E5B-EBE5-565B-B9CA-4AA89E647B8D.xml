@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4AEF3E5B-EBE5-565B-B9CA-4AA89E647B8D" name="ReporteActividad">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4AEF3E5B-EBE5-565B-B9CA-4AA89E647B8D" name="TB_REPORTEACTIVIDAD">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:30:43 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="56F8E594-6771-EB32-F814-3381DF98C0EC">
+<Column name="NB_ID" id="56F8E594-6771-EB32-F814-3381DF98C0EC">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:32:32 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,20,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdDocenteSemestreCurso" id="4506FA9D-3D44-E5F9-33CE-6CE186778ABB">
+<Column name="NB_IDDOCENTESEMESTRECURSO" id="4506FA9D-3D44-E5F9-33CE-6CE186778ABB">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 00:32:32 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
@@ -26,7 +26,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>12</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="A22954C0-1C5C-FF1F-4014-77342C93D35C" referredColumn="4A7B8D5E-FFC0-FB0E-195C-6243394F5EF5"/>
@@ -40,7 +40,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="FB9216D6-898B-791B-F55D-9FF671A42492" referredColumn="A8354D74-698C-211F-F818-2DDA2E04CFA9"/>
