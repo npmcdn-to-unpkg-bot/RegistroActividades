@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NB_Año" id="2A29C54B-ED6A-DD37-B0A0-802828DA6C5E">
+<Column name="NB_Anio" id="2A29C54B-ED6A-DD37-B0A0-802828DA6C5E">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:52:05 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>

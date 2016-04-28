@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C08B77B0-5AD9-787B-01ED-5C951957E2D2" containerWithKeyObject="17D82927-F5C5-2F49-12AD-2E8BDEF70489" localFKIndex="FE31999D-13C9-3F99-1237-40047ED0375E" name="PERMISOSXROL_RECURSO_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:23:48 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E65D966F-3419-A7D1-C78A-E270BAFF5BE3</referredTableID>
+<keyObject>20107303-EF87-B8E3-D3EB-B719933FCA23</keyObject>
+<referredKeyID>20107303-EF87-B8E3-D3EB-B719933FCA23</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

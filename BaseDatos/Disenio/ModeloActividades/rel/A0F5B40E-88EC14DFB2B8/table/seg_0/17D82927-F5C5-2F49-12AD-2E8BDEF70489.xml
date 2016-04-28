@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="17D82927-F5C5-2F49-12AD-2E8BDEF70489" name="TB_ADM_PERMISOSXROL">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:19:09 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_18</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ID" id="DE352F53-FC36-E099-B3D9-33ADB9E14B8A">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_IDRECURSO" id="4363F223-65E5-A41E-38D3-F20F77BB5FD8">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C08B77B0-5AD9-787B-01ED-5C951957E2D2" referredColumn="9D663412-8BE0-433A-74E2-D136FF256DEA"/>
+</associations>
+</Column>
+<Column name="NB_IDROL" id="CF04EF14-581B-EFC1-7609-B3AF17967C26">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="898B0294-B666-2C1E-6ACA-734EB45D83C7" referredColumn="72CC8FEA-D26B-FD66-7750-499B67F74DE8"/>
+</associations>
+</Column>
+<Column name="NB_ACTIVO" id="10030CBA-5180-3345-B8CD-985042830868">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_AGREGAR" id="F326064E-AE9A-741E-E4F4-62833C11A583">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ELIMINAR" id="F164AEF8-A8C0-C368-2811-ADA5FDD3DFBC">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ACTUALIZAR" id="72CEC866-6805-1CB8-B499-CB4F0208E6B7">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="733E58FB-244D-FCE2-DA2B-21B6F51914A7" name="TB_ADM_PERMISOSXROL_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:22:41 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DE352F53-FC36-E099-B3D9-33ADB9E14B8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="021333B7-C751-4056-6FCA-9904F5B5EB90" name="TB_ADM_PERMISOSXROL__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:23:27 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4363F223-65E5-A41E-38D3-F20F77BB5FD8"/>
+<colUsage columnID="CF04EF14-581B-EFC1-7609-B3AF17967C26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE31999D-13C9-3F99-1237-40047ED0375E" name="PERMISOSXROL_RECURSO_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:23:48 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4363F223-65E5-A41E-38D3-F20F77BB5FD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C80A20BA-DE6F-931C-E18D-A1B5006808F6" name="PERMISOSXROL_ROL_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:23:57 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF04EF14-581B-EFC1-7609-B3AF17967C26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

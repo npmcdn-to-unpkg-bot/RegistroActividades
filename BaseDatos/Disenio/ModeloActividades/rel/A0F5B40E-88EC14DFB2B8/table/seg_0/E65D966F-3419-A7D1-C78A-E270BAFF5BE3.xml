@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E65D966F-3419-A7D1-C78A-E270BAFF5BE3" name="TB_ADM_RECURSO">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:12:06 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ID" id="9D663412-8BE0-433A-74E2-D136FF256DEA">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:13:10 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_NOMBRE" id="2739BD77-4AE2-DC95-125C-ECFD272892EE">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:13:10 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_TIPO" id="67FD26D2-2AD5-BC19-9945-78DD1DEA1DE6">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:14:40 UTC</createdTime>
+<commentInRDBMS>1-&gt; Principal, 20-&gt; Con hijos</commentInRDBMS>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_IDPADRE" id="1F276C31-47C6-2EE3-31BF-7CB3E3EB73EA">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:13:45 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A92E23C5-8FB3-6F92-450B-C81F8CD8E10E" referredColumn="9D663412-8BE0-433A-74E2-D136FF256DEA"/>
+</associations>
+</Column>
+<Column name="VR_URL" id="FEAE4A3C-0DF9-4569-88F8-23804CD5DB4B">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:15:10 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="20107303-EF87-B8E3-D3EB-B719933FCA23" name="TB_ADM_RECURSO_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:13:10 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D663412-8BE0-433A-74E2-D136FF256DEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="383846C2-F045-967B-9B7E-C6EB7357F6D3" name="TB_ADM_RECURSO__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:18:30 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2739BD77-4AE2-DC95-125C-ECFD272892EE"/>
+<colUsage columnID="67FD26D2-2AD5-BC19-9945-78DD1DEA1DE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9A095B6-7A17-E361-A793-F0B0AC23E3B9" name="RECURSO_RECURSO_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:18:49 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F276C31-47C6-2EE3-31BF-7CB3E3EB73EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

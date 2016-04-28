@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C4780B0D-4153-92ED-FDA3-C654395727DF" name="TB_ADM_USUARIO">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:01:57 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ID" id="9A3B3AF7-C76F-A8C8-A95D-DE1B7B51A48D">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:04:20 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,15,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_IDPERSONA" id="E44F67FC-437D-67DC-0367-3A81E2D0ADA9">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:04:20 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="38D18A98-27E8-847B-07CF-9EDF16D37578" referredColumn="C414F5A5-3100-05FA-8853-A1EE88F1D5A7"/>
+</associations>
+</Column>
+<Column name="VR_LOGIN" id="2A812146-4D2D-6183-35F1-2D4E280972F7">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:04:20 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ACTIVO" id="1D690A23-B160-78D6-C8A9-E1217993E4B8">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:04:20 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0198263F-8318-7E66-EA6E-E08459055031" name="TB_ADM_USUARIO_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:04:20 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A3B3AF7-C76F-A8C8-A95D-DE1B7B51A48D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1048A000-51A8-AA9E-182E-22EA30BF1448" name="TB_ADM_USUARIO__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:05:04 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E44F67FC-437D-67DC-0367-3A81E2D0ADA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E95698E3-3D6E-6A01-F16F-39ACBD74BD04" name="USUARIO_PERSONA_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:05:53 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E44F67FC-437D-67DC-0367-3A81E2D0ADA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

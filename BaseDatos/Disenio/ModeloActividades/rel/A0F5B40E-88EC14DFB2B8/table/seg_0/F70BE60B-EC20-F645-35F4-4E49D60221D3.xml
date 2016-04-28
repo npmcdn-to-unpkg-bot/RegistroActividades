@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F70BE60B-EC20-F645-35F4-4E49D60221D3" name="TB_ADM_USUARIOXROL">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:08:26 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ID" id="2D183B2A-A53D-9561-41D7-CAB3D2ADB5E4">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:09:37 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_IDUSUARIO" id="3132DBA3-F022-FEB9-C383-1A82C1E59489">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:09:37 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D3A3EEC-A1A3-46BF-F930-B586ECE632E6" referredColumn="9A3B3AF7-C76F-A8C8-A95D-DE1B7B51A48D"/>
+</associations>
+</Column>
+<Column name="NB_IDROL" id="7A7F07CA-DFA2-C551-CABC-55192EEDDD06">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:09:37 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6988F89B-4EED-F045-CD93-C539D23E744A" referredColumn="72CC8FEA-D26B-FD66-7750-499B67F74DE8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3EE7E188-66C9-CF0C-BA66-6507F7F2E418" name="TB_ADM_USUARIOXROL_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:09:37 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D183B2A-A53D-9561-41D7-CAB3D2ADB5E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDEFB74C-FB10-64BE-94B5-AABA17E54B61" name="TB_ADM_USUARIOXROL__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:10:22 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3132DBA3-F022-FEB9-C383-1A82C1E59489"/>
+<colUsage columnID="7A7F07CA-DFA2-C551-CABC-55192EEDDD06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A9E504F-9381-211F-8D01-7860984C390F" name="USUARIOXROL_ROL_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:10:22 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A7F07CA-DFA2-C551-CABC-55192EEDDD06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D9D4441-61E6-7EC9-F3B3-C81E5906A630" name="USUARIOXROL_USUARIO_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:10:49 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3132DBA3-F022-FEB9-C383-1A82C1E59489"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

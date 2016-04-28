@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C472835C-5D23-393E-70A0-FCD274E78DAB" name="TB_ADM_ROL">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:06:48 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ID" id="72CC8FEA-D26B-FD66-7750-499B67F74DE8">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:08:02 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_NOMBRE" id="6CA15F32-118C-44F0-FFF0-6C652529967C">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:08:02 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F6E92B03-B776-034B-F731-E38F2B3BB112" name="TB_ADM_ROL_PK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:08:02 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72CC8FEA-D26B-FD66-7750-499B67F74DE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B742E76-81CF-391B-33F0-64A608BC666A" name="TB_ADM_ROL__UN">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:08:14 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6CA15F32-118C-44F0-FFF0-6C652529967C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

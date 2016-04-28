@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6988F89B-4EED-F045-CD93-C539D23E744A" containerWithKeyObject="F70BE60B-EC20-F645-35F4-4E49D60221D3" localFKIndex="1A9E504F-9381-211F-8D01-7860984C390F" name="USUARIOXROL_ROL_FK">
+<createdBy>arbpo</createdBy>
+<createdTime>2016-04-28 03:10:22 UTC</createdTime>
+<ownerDesignName>ModeloActividades</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C472835C-5D23-393E-70A0-FCD274E78DAB</referredTableID>
+<keyObject>F6E92B03-B776-034B-F731-E38F2B3BB112</keyObject>
+<referredKeyID>F6E92B03-B776-034B-F731-E38F2B3BB112</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

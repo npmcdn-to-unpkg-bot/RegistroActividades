@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E315B55D-E432-CB66-97D4-F859B6C0B197" name="Docente">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E315B55D-E432-CB66-97D4-F859B6C0B197" name="TB_DOCENTE">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:10:34 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="2DBD689B-857F-C0B6-F5D3-D0CC2EB4E87A">
+<Column name="NB_ID" id="2DBD689B-857F-C0B6-F5D3-D0CC2EB4E87A">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-22 02:10:34 UTC</createdTime>
 <ownerDesignName>ModeloActividades</ownerDesignName>
@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,15,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="IdPersona" id="1BDF3FC1-0550-DED1-31B5-9A67E25DB8DC">
+<Column name="NB_IdPersona" id="1BDF3FC1-0550-DED1-31B5-9A67E25DB8DC">
 <createdBy>arbpo</createdBy>
 <createdTime>2016-04-23 14:31:05 UTC</createdTime>
 <ownerDesignName>ModeloActividades20160423</ownerDesignName>
@@ -27,7 +27,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>15</dataTypePrecision>
-<ownDataTypeParameters>,15,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="69CB6445-B610-C53C-3F9D-92EBF913E389" referredColumn="C414F5A5-3100-05FA-8853-A1EE88F1D5A7"/>
@@ -52,6 +52,9 @@
 <ownerDesignName>ModeloActividades20160422</ownerDesignName>
 <indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BDF3FC1-0550-DED1-31B5-9A67E25DB8DC"/>
+</indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="59A352A5-E4EA-9BAA-A4B2-B286090CBB67" name="Docente_Persona_FK">
 <createdBy>arbpo</createdBy>
