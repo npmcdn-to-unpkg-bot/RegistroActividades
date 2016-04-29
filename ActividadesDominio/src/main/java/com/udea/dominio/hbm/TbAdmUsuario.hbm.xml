@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.dominio.dto.TbAdmUsuario" table="TB_ADM_USUARIO" schema="ACTIVIDADES">
+        <id name="nbId" type="long">
+            <column name="NB_ID" precision="15" scale="0" />
+            <generator class="sequence-identity">
+				<param name="sequence">SEQ_ADM_USUARIO</param>
+			</generator>
+        </id>
+        <many-to-one name="tbPersona" class="com.udea.dominio.dto.TbPersona" fetch="select">
+            <column name="NB_IDPERSONA" precision="15" scale="0" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="vrLogin" type="string">
+            <column name="VR_LOGIN" length="20" not-null="true" />
+        </property>
+        <property name="nbActivo" type="java.lang.Boolean">
+            <column name="NB_ACTIVO" precision="1" scale="0" />
+        </property>
+        <set name="tbAdmUsuarioxrols" table="TB_ADM_USUARIOXROL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDUSUARIO" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbAdmUsuarioxrol" />
+        </set>
+    </class>
+</hibernate-mapping>

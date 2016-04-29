@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.dominio.dto.TbSemestreCurso" table="TB_SEMESTRE_CURSO" schema="ACTIVIDADES">
+        <id name="nbId" type="long">
+            <column name="NB_ID" precision="10" scale="0" />
+            <generator class="sequence-identity">
+				<param name="sequence">SEQ_SEMESTRE_CURSO</param>
+			</generator>
+        </id>
+        <many-to-one name="tbCurso" class="com.udea.dominio.dto.TbCurso" fetch="select">
+            <column name="NB_IDCURSO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbGrupo" class="com.udea.dominio.dto.TbGrupo" fetch="select">
+            <column name="NB_IDGRUPO" precision="7" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbSemestre" class="com.udea.dominio.dto.TbSemestre" fetch="select">
+            <column name="NB_IDSEMESTRE" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <set name="tbDocenteSemestreCursos" table="TB_DOCENTE_SEMESTRE_CURSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDSEMESTRECURSO" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbDocenteSemestreCurso" />
+        </set>
+    </class>
+</hibernate-mapping>

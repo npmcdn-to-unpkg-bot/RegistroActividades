@@ -2,5 +2,26 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-name="PERSONA" match-schema="ACTIVIDADES"/>
+	<table-filter match-name="TB_ADM_PERMISOSXROL"
+		match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_ADM_RECURSO" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_ADM_ROL" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_ADM_USUARIO" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_ADM_USUARIOXROL"
+		match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_CURSO" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_DEPENDENCIA_ACADEMICA"
+		match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_DOCENTE" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_DOCENTE_SEMESTRE_CURSO"
+		match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_GRUPO" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_PERSONA" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_REPORTE_ACTIVIDAD"
+		match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_SEMESTRE" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_SEMESTRE_CURSO" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_TIPO_ACTIVIDAD" match-schema="ACTIVIDADES" />
+	<table-filter match-name="TB_TIPO_IDENTIFICACION"
+		match-schema="ACTIVIDADES" />
 </hibernate-reverse-engineering>

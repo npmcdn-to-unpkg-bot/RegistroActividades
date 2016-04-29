@@ -35,7 +35,7 @@
 		
 		<property name="mappingResources">
 			<list>
-				<value>com/udea/dominio/hbm/Persona.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbPersona.hbm.xml</value>
 			</list>
 		</property>
 		

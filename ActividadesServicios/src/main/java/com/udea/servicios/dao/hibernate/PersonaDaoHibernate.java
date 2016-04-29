@@ -4,12 +4,12 @@ import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.ctrlz.util.excepcion.ExcepcionDao;
-import com.udea.dominio.dto.Persona;
+import com.udea.dominio.dto.TbPersona;
 import com.udea.servicios.dao.PersonaDaoInt;
 
 public class PersonaDaoHibernate extends HibernateDaoSupport implements PersonaDaoInt {
 
-	public void crearPersona(Persona persona) throws ExcepcionDao {
+	public void crearPersona(TbPersona persona) throws ExcepcionDao {
 		Session session = null;
 		try{
 			session = getSession();
@@ -27,12 +27,12 @@ public class PersonaDaoHibernate extends HibernateDaoSupport implements PersonaD
 		}
 	}
 
-	public Persona consultarPersona(String identificacion) throws ExcepcionDao {
+	public TbPersona consultarPersona(String identificacion) throws ExcepcionDao {
 		// TODO Auto-generated method stub
-		Persona persona = new Persona();
-		persona.setIdn(9869567);
-		persona.setVrNombre("Arbey");
-		persona.setVrApellido("Villegas");
+		TbPersona persona = new TbPersona();
+		persona.setNbId(99899);
+		persona.setVrNombres("Arbey");
+		persona.setVrApellidos("Villegas");
 		return persona;
 	}
 

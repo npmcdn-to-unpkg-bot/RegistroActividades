@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.dominio.dto.TbAdmRecurso" table="TB_ADM_RECURSO" schema="ACTIVIDADES">
+        <id name="nbId" type="long">
+            <column name="NB_ID" precision="10" scale="0" />
+            <generator class="sequence-identity">
+				<param name="sequence">SEQ_ADM_RECURSO</param>
+			</generator>
+        </id>
+        <many-to-one name="tbAdmRecurso" class="com.udea.dominio.dto.TbAdmRecurso" fetch="select">
+            <column name="NB_IDPADRE" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrNombre" type="string">
+            <column name="VR_NOMBRE" length="50" />
+        </property>
+        <property name="nbTipo" type="boolean">
+            <column name="NB_TIPO" precision="1" scale="0" not-null="true">
+                <comment>1-&gt; Principal, 20-&gt; Con hijos</comment>
+            </column>
+        </property>
+        <property name="vrUrl" type="string">
+            <column name="VR_URL" length="250" />
+        </property>
+        <set name="tbAdmPermisosxrols" table="TB_ADM_PERMISOSXROL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDRECURSO" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbAdmPermisosxrol" />
+        </set>
+        <set name="tbAdmRecursos" table="TB_ADM_RECURSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDPADRE" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbAdmRecurso" />
+        </set>
+    </class>
+</hibernate-mapping>

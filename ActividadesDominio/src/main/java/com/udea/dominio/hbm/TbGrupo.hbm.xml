@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.dominio.dto.TbGrupo" table="TB_GRUPO" schema="ACTIVIDADES">
+        <id name="nbId" type="int">
+            <column name="NB_ID" precision="7" scale="0" />
+            <generator class="sequence-identity">
+				<param name="sequence">SEQ_GRUPO</param>
+			</generator>
+        </id>
+        <property name="vrCodigo" type="string">
+            <column name="VR_CODIGO" length="15" not-null="true" />
+        </property>
+        <property name="vrNombre" type="string">
+            <column name="VR_NOMBRE" length="100" not-null="true" />
+        </property>
+        <set name="tbSemestreCursos" table="TB_SEMESTRE_CURSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDGRUPO" precision="7" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbSemestreCurso" />
+        </set>
+    </class>
+</hibernate-mapping>

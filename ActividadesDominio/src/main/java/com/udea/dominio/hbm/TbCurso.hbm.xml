@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.dominio.dto.TbCurso" table="TB_CURSO" schema="ACTIVIDADES">
+        <id name="nbId" type="long">
+            <column name="NB_ID" precision="10" scale="0" />
+            <generator class="sequence-identity">
+				<param name="sequence">SEQ_ADM_CURSO</param>
+			</generator>
+        </id>
+        <many-to-one name="tbDependenciaAcademica" class="com.udea.dominio.dto.TbDependenciaAcademica" fetch="select">
+            <column name="NB_IDCURSO" precision="5" scale="0" />
+        </many-to-one>
+        <property name="vrCodigo" type="string">
+            <column name="VR_CODIGO" length="20" not-null="true" />
+        </property>
+        <property name="vrNombre" type="string">
+            <column name="VR_NOMBRE" length="100" />
+        </property>
+        <set name="tbSemestreCursos" table="TB_SEMESTRE_CURSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_IDCURSO" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dominio.dto.TbSemestreCurso" />
+        </set>
+    </class>
+</hibernate-mapping>

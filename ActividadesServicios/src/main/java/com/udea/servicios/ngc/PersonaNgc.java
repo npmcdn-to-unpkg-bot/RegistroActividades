@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.udea.servicios.dao.PersonaDaoInt;
 import com.ctrlz.util.excepcion.ExcepcionDao;
 import com.ctrlz.util.excepcion.ExcepcionNgc;
-import com.udea.dominio.dto.Persona;
+import com.udea.dominio.dto.TbPersona;
 
 @RestController
 @RequestMapping(value = "/persona")
@@ -25,7 +25,7 @@ public class PersonaNgc implements PersonaNgcInt {
 	}
 
 	@RequestMapping(value = "/registrar", method = RequestMethod.POST)
-	public void crearPersona(@RequestBody Persona persona) throws ExcepcionNgc {
+	public void crearPersona(@RequestBody TbPersona persona) throws ExcepcionNgc {
 		try {
 			personaDao.crearPersona(persona);
 		} catch (ExcepcionDao e) {
@@ -39,7 +39,7 @@ public class PersonaNgc implements PersonaNgcInt {
 	}
 
 	@RequestMapping(value = "/get/{identificacion}", method = RequestMethod.GET)
-	public @ResponseBody Persona consultarPersona(@PathVariable("identificacion") String identificacion)
+	public @ResponseBody TbPersona consultarPersona(@PathVariable("identificacion") String identificacion)
 			throws ExcepcionNgc {
 		try {
 			return personaDao.consultarPersona(identificacion);
