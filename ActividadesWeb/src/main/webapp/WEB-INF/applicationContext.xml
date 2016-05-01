@@ -12,13 +12,15 @@
 
 	<!-- BEANS CONFIGURACION JNDI DATASOURCE -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/jdbc/RegistroActividadesConexion" />
+		<property name="jndiName"
+			value="java:comp/env/jdbc/RegistroActividadesConexion" />
 	</bean>
 
 	<!-- BEANS CONFIGURACION HIBERNATE -->
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		
+
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">
@@ -32,17 +34,33 @@
 				</prop>
 			</props>
 		</property>
-		
+
 		<property name="mappingResources">
 			<list>
+				<value>com/udea/dominio/hbm/TbAdmPermisosxrol.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbAdmRecurso.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbAdmRol.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbAdmUsuario.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbAdmUsuarioxrol.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbCurso.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbDependenciaAcademica.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbDocente.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbDocenteSemestreCurso.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbGrupo.hbm.xml</value>
 				<value>com/udea/dominio/hbm/TbPersona.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbReporteActividad.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbSemestre.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbSemestreCurso.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbTipoActividad.hbm.xml</value>
+				<value>com/udea/dominio/hbm/TbTipoIdentificacion.hbm.xml</value>
 			</list>
 		</property>
-		
-	</bean>	
+
+	</bean>
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
-	<bean id="beanPersonaNgc" class="com.udea.servicios.ngc.PersonaNgc" scope="singleton">
+	<bean id="beanPersonaNgc" class="com.udea.servicios.ngc.PersonaNgc"
+		scope="singleton">
 		<property name="personaDao" ref="personaDaoPers"></property>
 	</bean>
 

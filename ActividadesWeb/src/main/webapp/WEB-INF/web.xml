@@ -25,6 +25,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>persona</servlet-name>
-    <url-pattern>/persona/rest/*</url-pattern>
+    <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
 </web-app>
