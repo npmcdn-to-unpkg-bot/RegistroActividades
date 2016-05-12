@@ -25,6 +25,24 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>persona</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
+    <url-pattern>/persona/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>docente</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>docente</servlet-name>
+    <url-pattern>/docente/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>tipoactividad</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tipoactividad</servlet-name>
+    <url-pattern>/tipoactividad/*</url-pattern>
   </servlet-mapping>
 </web-app>

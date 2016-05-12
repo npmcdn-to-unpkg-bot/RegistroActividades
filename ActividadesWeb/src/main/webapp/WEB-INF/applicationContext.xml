@@ -64,8 +64,24 @@
 		<property name="personaDao" ref="personaDaoPers"></property>
 	</bean>
 
+	<bean id="beanDocenteNgc" class="com.udea.servicios.ngc.DocenteNgc"
+		scope="singleton">
+		<property name="docenteDao" ref="docenteDaoPers"></property>
+	</bean>
+	
+	<bean id="beanTipoActividadNgc" class="com.udea.servicios.ngc.TipoActividadNgc"
+		scope="singleton">
+		<property name="tipoActividadDao" ref="tipoActividadDaoPers"></property>
+	</bean>
+
 	<!-- BEANS PARA LA PERSISTENCIA -->
 	<bean id="personaDaoPers" class="com.udea.servicios.dao.hibernate.PersonaDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="docenteDaoPers" class="com.udea.servicios.dao.hibernate.DocenteDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="tipoActividadDaoPers" class="com.udea.servicios.dao.hibernate.TipoActividadDaoHibernate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
