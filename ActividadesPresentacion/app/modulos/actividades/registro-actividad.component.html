@@ -1,0 +1,46 @@
+<h2>Registro actividad</h2>
+<div class="jumbotron">
+    <form #actividadForm="ngForm">
+        <div class="row">
+            <div class="col-xs-2">Docente</div>
+            <div class="col-xs-4">
+                <select class="form-control" required [(ngModel)]="modelo.idDocente" ngControl="docente" #docente="ngForm">
+                    <option *ngFor="let d of docentes" [value]=d.nbId>{{d.tbPersona.vrNombres}} {{d.tbPersona.vrApellidos}}</option>
+                </select>
+                <div [hidden]="docente.valid || docente.pristine" class="alert alert-danger">
+                    El docente es requerido
+                </div>
+            </div>
+            <div class="col-xs-2">Tipo Actividad</div>
+            <div class="col-xs-4">
+                <select class="form-control" required [(ngModel)]="modelo.idTipoActividad" ngControl="tipoActividad" #tipoActividad="ngForm"></select>
+                <div [hidden]="tipoActividad.valid || tipoActividad.pristine" class="alert alert-danger">
+                    El tipo de actividad es requerido
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">Fecha</div>
+            <div class="col-xs-4">
+                <input type="date" class="form-control" required [(ngModel)]="modelo.fechaActividad" ngControl="fechaActividad" #fechaActividad="ngForm">
+                <div [hidden]="fechaActividad.valid || fechaActividad.pristine" class="alert alert-danger">
+                    La fecha de la actividad es requerida
+                </div>
+            </div>
+            <div class="col-xs-2">Horas</div>
+            <div class="col-xs-4">
+                <input type="number" step="0.1" class="form-control" required [(ngModel)]="modelo.horas" ngControl="horas" #horas="ngForm">
+                <div [hidden]="horas.valid || horas.pristine" class="alert alert-danger">
+                    La fecha de la actividad es requerida
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">Observaciones</div>
+            <div class="col-xs-10">
+                <input type="text" multiple="multiple" class="form-control" [(ngModel)]="modelo.observacion" ngControl="observacion">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" [disabled]="!actividadForm.form.valid">Guardar</button>
+    </form>
+</div>
