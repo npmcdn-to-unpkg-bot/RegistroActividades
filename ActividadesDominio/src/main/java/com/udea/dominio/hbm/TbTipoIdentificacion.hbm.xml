@@ -4,7 +4,7 @@
 <!-- Generated 28/04/2016 10:30:45 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.udea.dominio.dto.TbTipoIdentificacion" table="TB_TIPO_IDENTIFICACION" schema="ACTIVIDADES">
-        <id name="nbId" type="boolean">
+        <id name="nbId" type="short">
             <column name="NB_ID" precision="1" scale="0" />
             <generator class="sequence-identity">
 				<param name="sequence">SEQ_TIPO_IDENTIFICACION</param>

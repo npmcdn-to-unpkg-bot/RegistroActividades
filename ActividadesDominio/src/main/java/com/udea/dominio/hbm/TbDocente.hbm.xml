@@ -10,7 +10,7 @@
 				<param name="sequence">SEQ_DOCENTE</param>
 			</generator>
         </id>
-        <many-to-one name="tbPersona" class="com.udea.dominio.dto.TbPersona" fetch="select">
+        <many-to-one name="tbPersona" class="com.udea.dominio.dto.TbPersona" fetch="join">
             <column name="NB_IDPERSONA" precision="15" scale="0" not-null="true" unique="true" />
         </many-to-one>
         <set name="tbDocenteSemestreCursos" table="TB_DOCENTE_SEMESTRE_CURSO" inverse="true" lazy="true" fetch="select">

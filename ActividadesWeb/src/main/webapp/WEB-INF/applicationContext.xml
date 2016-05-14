@@ -84,5 +84,4 @@
 	<bean id="tipoActividadDaoPers" class="com.udea.servicios.dao.hibernate.TipoActividadDaoHibernate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
 </beans>

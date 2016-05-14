@@ -9,29 +9,29 @@ import java.util.Set;
  */
 public class TbTipoIdentificacion implements java.io.Serializable {
 
-	private boolean nbId;
+	private short nbId;
 	private String vrDescripcion;
 	private Set tbPersonas = new HashSet(0);
 
 	public TbTipoIdentificacion() {
 	}
 
-	public TbTipoIdentificacion(boolean nbId, String vrDescripcion) {
+	public TbTipoIdentificacion(short nbId, String vrDescripcion) {
 		this.nbId = nbId;
 		this.vrDescripcion = vrDescripcion;
 	}
 
-	public TbTipoIdentificacion(boolean nbId, String vrDescripcion, Set tbPersonas) {
+	public TbTipoIdentificacion(short nbId, String vrDescripcion, Set tbPersonas) {
 		this.nbId = nbId;
 		this.vrDescripcion = vrDescripcion;
 		this.tbPersonas = tbPersonas;
 	}
 
-	public boolean isNbId() {
+	public short getNbId() {
 		return this.nbId;
 	}
 
-	public void setNbId(boolean nbId) {
+	public void setNbId(short nbId) {
 		this.nbId = nbId;
 	}
 

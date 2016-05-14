@@ -15,7 +15,8 @@ public class DocenteDaoHibernate extends HibernateDaoSupport implements DocenteD
 		Session session = null;
 		try{
 			session = getSession();
-			List<TbDocente> docentes=session.createQuery("FROM TbDocente").list();
+			List<TbDocente> docentes=session.createQuery("FROM TbDocente as d INNER JOIN FETCH d.tbPersona").list();
+//			List<TbDocente> docentes=session.createCriteria(TbDocente.class).list();
 			session.flush();
 			return docentes;
 		}catch(Exception e){
@@ -26,7 +27,7 @@ public class DocenteDaoHibernate extends HibernateDaoSupport implements DocenteD
 			throw expDao;
 		}
 		finally{
-			session.close();
+//			session.close();
 		}
 	}
 

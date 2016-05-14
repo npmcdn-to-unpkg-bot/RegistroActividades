@@ -10,7 +10,7 @@
 				<param name="sequence">SEQ_PERSONA</param>
 			</generator>
         </id>
-        <many-to-one name="tbTipoIdentificacion" class="com.udea.dominio.dto.TbTipoIdentificacion" fetch="select">
+        <many-to-one name="tbTipoIdentificacion" class="com.udea.dominio.dto.TbTipoIdentificacion" fetch="join">
             <column name="NB_IDTIPOIDENTIFICACION" precision="1" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrIdentificacion" type="string">
