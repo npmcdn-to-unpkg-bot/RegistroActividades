@@ -16,9 +16,9 @@
         <property name="vrNombre" type="string">
             <column name="VR_NOMBRE" length="50" />
         </property>
-        <property name="nbTipo" type="boolean">
-            <column name="NB_TIPO" precision="1" scale="0" not-null="true">
-                <comment>1-&gt; Principal, 20-&gt; Con hijos</comment>
+        <property name="nbTipo" type="short">
+            <column name="NB_TIPO" precision="3" scale="0" not-null="true">
+                <comment>1-&gt; Principal, 2-&gt; Con hijos</comment>
             </column>
         </property>
         <property name="vrUrl" type="string">

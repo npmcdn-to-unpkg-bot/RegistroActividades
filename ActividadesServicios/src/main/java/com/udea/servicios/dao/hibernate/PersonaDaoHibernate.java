@@ -1,5 +1,7 @@
 package com.udea.servicios.dao.hibernate;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -34,6 +36,23 @@ public class PersonaDaoHibernate extends HibernateDaoSupport implements PersonaD
 		persona.setVrNombres("Arbey");
 		persona.setVrApellidos("Villegas");
 		return persona;
+	}
+
+	public List<TbPersona> consultarPersonas() throws ExcepcionDao {
+		Session session = null;
+		try{
+			session = getSession();
+			List<TbPersona> personas=session.createCriteria(TbPersona.class).list();
+			session.flush(); 
+			
+			return personas;
+		}catch(Exception e){
+			//Rollback
+			ExcepcionDao expDao = new ExcepcionDao();
+			expDao.setExcepcionOrigen(e);
+			expDao.setMensajeUsuario("Error almacenando persona");
+			throw expDao;
+		}
 	}
 
 }

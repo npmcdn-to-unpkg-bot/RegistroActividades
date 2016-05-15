@@ -13,7 +13,9 @@
             </div>
             <div class="col-xs-2">Tipo Actividad</div>
             <div class="col-xs-4">
-                <select class="form-control" required [(ngModel)]="modelo.idTipoActividad" ngControl="tipoActividad" #tipoActividad="ngForm"></select>
+                <select class="form-control" required [(ngModel)]="modelo.idTipoActividad" ngControl="tipoActividad" #tipoActividad="ngForm">
+                    <option *ngFor="let ta of tipoActividades" [value]=ta.nbId>{{ta.vrNombre}}</option>
+                </select>
                 <div [hidden]="tipoActividad.valid || tipoActividad.pristine" class="alert alert-danger">
                     El tipo de actividad es requerido
                 </div>

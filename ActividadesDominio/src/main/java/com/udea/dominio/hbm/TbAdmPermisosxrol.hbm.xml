@@ -16,17 +16,17 @@
         <many-to-one name="tbAdmRol" class="com.udea.dominio.dto.TbAdmRol" fetch="select">
             <column name="NB_IDROL" precision="5" scale="0" not-null="true" />
         </many-to-one>
-        <property name="nbActivo" type="java.lang.Boolean">
-            <column name="NB_ACTIVO" precision="1" scale="0" />
+        <property name="nbActivo" type="java.lang.Byte">
+            <column name="NB_ACTIVO" precision="2" scale="0" />
         </property>
-        <property name="nbAgregar" type="java.lang.Boolean">
-            <column name="NB_AGREGAR" precision="1" scale="0" />
+        <property name="nbAgregar" type="java.lang.Byte">
+            <column name="NB_AGREGAR" precision="2" scale="0" />
         </property>
-        <property name="nbEliminar" type="java.lang.Boolean">
-            <column name="NB_ELIMINAR" precision="1" scale="0" />
+        <property name="nbEliminar" type="java.lang.Byte">
+            <column name="NB_ELIMINAR" precision="2" scale="0" />
         </property>
-        <property name="nbActualizar" type="java.lang.Boolean">
-            <column name="NB_ACTUALIZAR" precision="1" scale="0" />
+        <property name="nbActualizar" type="java.lang.Byte">
+            <column name="NB_ACTUALIZAR" precision="2" scale="0" />
         </property>
     </class>
 </hibernate-mapping>

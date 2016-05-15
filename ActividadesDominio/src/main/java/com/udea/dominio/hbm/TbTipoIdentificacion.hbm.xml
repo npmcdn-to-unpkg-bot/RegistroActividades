@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.udea.dominio.dto.TbTipoIdentificacion" table="TB_TIPO_IDENTIFICACION" schema="ACTIVIDADES">
         <id name="nbId" type="short">
-            <column name="NB_ID" precision="1" scale="0" />
+            <column name="NB_ID" precision="3" scale="0" />
             <generator class="sequence-identity">
 				<param name="sequence">SEQ_TIPO_IDENTIFICACION</param>
 			</generator>
@@ -15,7 +15,7 @@
         </property>
         <set name="tbPersonas" table="TB_PERSONA" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="NB_IDTIPOIDENTIFICACION" precision="1" scale="0" not-null="true" />
+                <column name="NB_IDTIPOIDENTIFICACION" precision="3" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.udea.dominio.dto.TbPersona" />
         </set>

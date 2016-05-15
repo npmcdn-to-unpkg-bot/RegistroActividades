@@ -1,5 +1,7 @@
 package com.udea.servicios.ngc;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +45,20 @@ public class PersonaNgc implements PersonaNgcInt {
 			throws ExcepcionNgc {
 		try {
 			return personaDao.consultarPersona(identificacion);
+		} catch (ExcepcionDao e) {
+			ExcepcionNgc expNgc = new ExcepcionNgc(e);
+			throw expNgc;
+		} catch (Exception e) {
+			ExcepcionNgc expNgc = new ExcepcionNgc(e);
+			expNgc.setMensajeUsuario("Error validando información");
+			throw expNgc;
+		}
+	}
+
+	@RequestMapping(value = "/consultar", method = RequestMethod.GET)
+	public List<TbPersona> consultarPersona() throws ExcepcionNgc {
+		try {
+			return personaDao.consultarPersonas();
 		} catch (ExcepcionDao e) {
 			ExcepcionNgc expNgc = new ExcepcionNgc(e);
 			throw expNgc;

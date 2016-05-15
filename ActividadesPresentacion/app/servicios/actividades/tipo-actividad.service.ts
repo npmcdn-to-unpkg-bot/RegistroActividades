@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-import {Docente} from "../../modelo/actividades/docente";
+import {TipoActividad} from "../../modelo/actividades/tipo-actividad";
 @Injectable()
-export class DocenteService {
+export class TipoActividadService {
     constructor(private http: Http) { }
 
-    private docenteUrl = 'http://localhost:8084/ActividadesWeb/docente/docente/consultar';  // URL to web api
+    private tipoActividadUrl = 'http://localhost:8084/ActividadesWeb/tipoactividad/tipoactividad/consultar';  // URL to web api
 
-    consultarDocentes(): Observable<Docente[]> {
-        return this.http.get(this.docenteUrl)
+    consultaTipoActividades(): Observable<TipoActividad[]> {
+        return this.http.get(this.tipoActividadUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }

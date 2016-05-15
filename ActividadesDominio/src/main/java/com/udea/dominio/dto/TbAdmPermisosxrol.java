@@ -9,10 +9,10 @@ public class TbAdmPermisosxrol implements java.io.Serializable {
 	private long nbId;
 	private TbAdmRecurso tbAdmRecurso;
 	private TbAdmRol tbAdmRol;
-	private Boolean nbActivo;
-	private Boolean nbAgregar;
-	private Boolean nbEliminar;
-	private Boolean nbActualizar;
+	private Byte nbActivo;
+	private Byte nbAgregar;
+	private Byte nbEliminar;
+	private Byte nbActualizar;
 
 	public TbAdmPermisosxrol() {
 	}
@@ -23,8 +23,8 @@ public class TbAdmPermisosxrol implements java.io.Serializable {
 		this.tbAdmRol = tbAdmRol;
 	}
 
-	public TbAdmPermisosxrol(long nbId, TbAdmRecurso tbAdmRecurso, TbAdmRol tbAdmRol, Boolean nbActivo,
-			Boolean nbAgregar, Boolean nbEliminar, Boolean nbActualizar) {
+	public TbAdmPermisosxrol(long nbId, TbAdmRecurso tbAdmRecurso, TbAdmRol tbAdmRol, Byte nbActivo, Byte nbAgregar,
+			Byte nbEliminar, Byte nbActualizar) {
 		this.nbId = nbId;
 		this.tbAdmRecurso = tbAdmRecurso;
 		this.tbAdmRol = tbAdmRol;
@@ -58,35 +58,35 @@ public class TbAdmPermisosxrol implements java.io.Serializable {
 		this.tbAdmRol = tbAdmRol;
 	}
 
-	public Boolean getNbActivo() {
+	public Byte getNbActivo() {
 		return this.nbActivo;
 	}
 
-	public void setNbActivo(Boolean nbActivo) {
+	public void setNbActivo(Byte nbActivo) {
 		this.nbActivo = nbActivo;
 	}
 
-	public Boolean getNbAgregar() {
+	public Byte getNbAgregar() {
 		return this.nbAgregar;
 	}
 
-	public void setNbAgregar(Boolean nbAgregar) {
+	public void setNbAgregar(Byte nbAgregar) {
 		this.nbAgregar = nbAgregar;
 	}
 
-	public Boolean getNbEliminar() {
+	public Byte getNbEliminar() {
 		return this.nbEliminar;
 	}
 
-	public void setNbEliminar(Boolean nbEliminar) {
+	public void setNbEliminar(Byte nbEliminar) {
 		this.nbEliminar = nbEliminar;
 	}
 
-	public Boolean getNbActualizar() {
+	public Byte getNbActualizar() {
 		return this.nbActualizar;
 	}
 
-	public void setNbActualizar(Boolean nbActualizar) {
+	public void setNbActualizar(Byte nbActualizar) {
 		this.nbActualizar = nbActualizar;
 	}
 

@@ -11,7 +11,7 @@
 			</generator>
         </id>
         <many-to-one name="tbDependenciaAcademica" class="com.udea.dominio.dto.TbDependenciaAcademica" fetch="select">
-            <column name="NB_IDCURSO" precision="5" scale="0" />
+            <column name="NB_IDDEPENDENCIA" precision="5" scale="0" />
         </many-to-one>
         <property name="vrCodigo" type="string">
             <column name="VR_CODIGO" length="20" not-null="true" />

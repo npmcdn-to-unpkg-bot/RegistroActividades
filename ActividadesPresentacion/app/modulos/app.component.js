@@ -30,8 +30,7 @@ var AppComponent = (function () {
             {
                 path: '/registroactividad',
                 name: 'RegistroActividad',
-                component: registro_actividad_component_1.RegistroActividadComponent,
-                useAsDefault: true
+                component: registro_actividad_component_1.RegistroActividadComponent
             },
             {
                 path: '/consultaactividad',

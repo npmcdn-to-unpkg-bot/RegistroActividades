@@ -14,10 +14,10 @@ var Observable_1 = require('rxjs/Observable');
 var DocenteService = (function () {
     function DocenteService(http) {
         this.http = http;
-        this.docenteUrl = 'http://localhost:8084/ActividadesWeb/docente/docente/consultar'; // URL to web api
+        this.tipoActividadUrl = 'http://localhost:8084/ActividadesWeb/tipoactividad/tipoactividad/consultar'; // URL to web api
     }
     DocenteService.prototype.consultarDocentes = function () {
-        return this.http.get(this.docenteUrl)
+        return this.http.get(this.tipoActividadUrl)
             .map(this.extractData)
             .catch(this.handleError);
     };
@@ -26,7 +26,7 @@ var DocenteService = (function () {
             throw new Error('Bad response status: ' + res.status);
         }
         var body = res.json();
-        return body || [];
+        return body.data || {};
     };
     DocenteService.prototype.handleError = function (error) {
         // In a real world app, we might send the error to remote logging infrastructure
@@ -41,4 +41,4 @@ var DocenteService = (function () {
     return DocenteService;
 }());
 exports.DocenteService = DocenteService;
-//# sourceMappingURL=docente.service.js.map
+//# sourceMappingURL=tipo-actividad.service.js.map

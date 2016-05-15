@@ -15,7 +15,7 @@
         </property>
         <set name="tbCursos" table="TB_CURSO" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="NB_IDCURSO" precision="5" scale="0" />
+                <column name="NB_IDDEPENDENCIA" precision="5" scale="0" />
             </key>
             <one-to-many class="com.udea.dominio.dto.TbCurso" />
         </set>

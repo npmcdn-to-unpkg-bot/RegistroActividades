@@ -12,7 +12,7 @@ public class TbAdmRecurso implements java.io.Serializable {
 	private long nbId;
 	private TbAdmRecurso tbAdmRecurso;
 	private String vrNombre;
-	private boolean nbTipo;
+	private short nbTipo;
 	private String vrUrl;
 	private Set tbAdmPermisosxrols = new HashSet(0);
 	private Set tbAdmRecursos = new HashSet(0);
@@ -20,13 +20,13 @@ public class TbAdmRecurso implements java.io.Serializable {
 	public TbAdmRecurso() {
 	}
 
-	public TbAdmRecurso(long nbId, TbAdmRecurso tbAdmRecurso, boolean nbTipo) {
+	public TbAdmRecurso(long nbId, TbAdmRecurso tbAdmRecurso, short nbTipo) {
 		this.nbId = nbId;
 		this.tbAdmRecurso = tbAdmRecurso;
 		this.nbTipo = nbTipo;
 	}
 
-	public TbAdmRecurso(long nbId, TbAdmRecurso tbAdmRecurso, String vrNombre, boolean nbTipo, String vrUrl,
+	public TbAdmRecurso(long nbId, TbAdmRecurso tbAdmRecurso, String vrNombre, short nbTipo, String vrUrl,
 			Set tbAdmPermisosxrols, Set tbAdmRecursos) {
 		this.nbId = nbId;
 		this.tbAdmRecurso = tbAdmRecurso;
@@ -61,11 +61,11 @@ public class TbAdmRecurso implements java.io.Serializable {
 		this.vrNombre = vrNombre;
 	}
 
-	public boolean isNbTipo() {
+	public short getNbTipo() {
 		return this.nbTipo;
 	}
 
-	public void setNbTipo(boolean nbTipo) {
+	public void setNbTipo(short nbTipo) {
 		this.nbTipo = nbTipo;
 	}
 

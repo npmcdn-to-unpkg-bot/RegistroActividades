@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import { RegistroActividadComponent } from './actividades/registro-actividad.component';
 import { ConsultaActividadComponent  } from './actividades/consulta-actividad.component';
 import {DocenteService} from "../servicios/actividades/docente.service";
+import {TipoActividadService} from "../servicios/actividades/tipo-actividad.service";
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HTTP_PROVIDERS }    from '@angular/http';
 @Component({
@@ -9,15 +10,17 @@ import { HTTP_PROVIDERS }    from '@angular/http';
     templateUrl:"app/modulos/app.component.html",
     directives: [ROUTER_DIRECTIVES],
 	providers: [
-	  ROUTER_PROVIDERS,DocenteService,HTTP_PROVIDERS
+	  ROUTER_PROVIDERS
+		,HTTP_PROVIDERS
+		,DocenteService
+		,TipoActividadService
 	]
 })
 @RouteConfig([
   {
 	path: '/registroactividad',
 	name: 'RegistroActividad',
-	component: RegistroActividadComponent,
-	useAsDefault: true
+	component: RegistroActividadComponent
   },
   {
 	path: '/consultaactividad',
