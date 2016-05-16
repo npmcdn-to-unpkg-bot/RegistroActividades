@@ -83,6 +83,11 @@
 		scope="singleton">
 		<property name="docenteSemestreCursoDao" ref="docenteSemestreCursoDaoPers"></property>
 	</bean>
+	
+	<bean id="beanReporteActividadNgc" class="com.udea.servicios.ngc.ReporteActividadNgc"
+		scope="singleton">
+		<property name="reporteActividadDao" ref="reporteActividadDaoPers"></property>
+	</bean>
 
 	<!-- BEANS PARA LA PERSISTENCIA -->
 	<bean id="personaDaoPers" class="com.udea.servicios.dao.hibernate.PersonaDaoHibernate">
@@ -98,6 +103,9 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<bean id="docenteSemestreCursoDaoPers" class="com.udea.servicios.dao.hibernate.DocenteSemestreCursoDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="reporteActividadDaoPers" class="com.udea.servicios.dao.hibernate.ReporteActividadDaoHibernate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>

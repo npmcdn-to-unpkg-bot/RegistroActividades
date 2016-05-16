@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var registro_actividad_component_1 = require('./actividades/registro-actividad.component');
 var consulta_actividad_component_1 = require('./actividades/consulta-actividad.component');
 var docente_service_1 = require("../servicios/actividades/docente.service");
+var tipo_actividad_service_1 = require("../servicios/actividades/tipo-actividad.service");
+var semestre_service_1 = require("../servicios/actividades/semestre.service");
+var dsc_service_1 = require("../servicios/actividades/dsc.service");
 var router_deprecated_1 = require('@angular/router-deprecated');
 var http_1 = require('@angular/http');
 var AppComponent = (function () {
@@ -23,7 +26,12 @@ var AppComponent = (function () {
             templateUrl: "app/modulos/app.component.html",
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
-                router_deprecated_1.ROUTER_PROVIDERS, docente_service_1.DocenteService, http_1.HTTP_PROVIDERS
+                router_deprecated_1.ROUTER_PROVIDERS,
+                http_1.HTTP_PROVIDERS,
+                docente_service_1.DocenteService,
+                tipo_actividad_service_1.TipoActividadService,
+                semestre_service_1.SemestreService,
+                dsc_service_1.DscService
             ]
         }),
         router_deprecated_1.RouteConfig([

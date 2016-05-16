@@ -11,34 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
-var TipoActividadService = (function () {
-    function TipoActividadService(http) {
+var DscService = (function () {
+    // private semestreUrl = 'http://localhost:8084/ActividadesWeb/rest/dsc/{0}/{1}'; 
+    function DscService(http) {
         this.http = http;
-        this.tipoActividadUrl = 'http://localhost:8084/ActividadesWeb/tipoactividad/tipoactividad/consultar'; // URL to web api
     }
-    TipoActividadService.prototype.consultaTipoActividades = function () {
-        return this.http.get(this.tipoActividadUrl)
+    DscService.prototype.consultarCursosSemestre = function (docente, semestreCurso) {
+        var semestreUrl = "http://localhost:8084/ActividadesWeb/rest/dsc/consultar/" + docente + "/" + semestreCurso;
+        return this.http.get(semestreUrl)
             .map(this.extractData)
             .catch(this.handleError);
     };
-    TipoActividadService.prototype.extractData = function (res) {
+    DscService.prototype.extractData = function (res) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
         }
         var body = res.json();
         return body || [];
     };
-    TipoActividadService.prototype.handleError = function (error) {
+    DscService.prototype.handleError = function (error) {
         // In a real world app, we might send the error to remote logging infrastructure
         var errMsg = error.message || 'Server error';
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
-    TipoActividadService = __decorate([
+    DscService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], TipoActividadService);
-    return TipoActividadService;
+    ], DscService);
+    return DscService;
 }());
-exports.TipoActividadService = TipoActividadService;
-//# sourceMappingURL=tipo-actividad.service.js.map
+exports.DscService = DscService;
+//# sourceMappingURL=dsc.service.js.map

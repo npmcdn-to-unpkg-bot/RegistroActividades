@@ -11,34 +11,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
-var TipoActividadService = (function () {
-    function TipoActividadService(http) {
+var SemestreService = (function () {
+    function SemestreService(http) {
         this.http = http;
-        this.tipoActividadUrl = 'http://localhost:8084/ActividadesWeb/tipoactividad/tipoactividad/consultar'; // URL to web api
+        this.semestreUrl = 'http://localhost:8084/ActividadesWeb/rest/semestre/consultar';
     }
-    TipoActividadService.prototype.consultaTipoActividades = function () {
-        return this.http.get(this.tipoActividadUrl)
+    SemestreService.prototype.consultarSemestres = function () {
+        return this.http.get(this.semestreUrl)
             .map(this.extractData)
             .catch(this.handleError);
     };
-    TipoActividadService.prototype.extractData = function (res) {
+    SemestreService.prototype.extractData = function (res) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
         }
         var body = res.json();
         return body || [];
     };
-    TipoActividadService.prototype.handleError = function (error) {
+    SemestreService.prototype.handleError = function (error) {
         // In a real world app, we might send the error to remote logging infrastructure
         var errMsg = error.message || 'Server error';
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
-    TipoActividadService = __decorate([
+    SemestreService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], TipoActividadService);
-    return TipoActividadService;
+    ], SemestreService);
+    return SemestreService;
 }());
-exports.TipoActividadService = TipoActividadService;
-//# sourceMappingURL=tipo-actividad.service.js.map
+exports.SemestreService = SemestreService;
+//# sourceMappingURL=semestre.service.js.map

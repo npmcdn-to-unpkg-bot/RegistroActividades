@@ -18,7 +18,7 @@ public class DocenteSemestreCursoDaoHibernate extends HibernateDaoSupport implem
 			session = getSession();
 			StringBuilder hqlString=new StringBuilder();
 			hqlString.append("FROM TbDocenteSemestreCurso dsc");
-			hqlString.append(" WHERE dsc.tbSemestreCurso.nbId=:idSemestre");
+			hqlString.append(" WHERE dsc.tbSemestreCurso.tbSemestre.nbId=:idSemestre");
 			hqlString.append(" AND dsc.tbDocente.nbId=:idDocente");
 			Query query = session.createQuery(hqlString.toString());
 			query.setInteger("idSemestre", semestre);

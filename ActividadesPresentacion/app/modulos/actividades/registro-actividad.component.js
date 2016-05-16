@@ -9,19 +9,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var actividad_1 = require('../../modelo/actividades/actividad');
+var reporte_actividad_1 = require('../../modelo/actividades/reporte-actividad');
 var docente_service_1 = require('../../servicios/actividades/docente.service');
+var tipo_actividad_service_1 = require('../../servicios/actividades/tipo-actividad.service');
+var semestre_service_1 = require('../../servicios/actividades/semestre.service');
+var dsc_service_1 = require('../../servicios/actividades/dsc.service');
 var RegistroActividadComponent = (function () {
-    function RegistroActividadComponent(docenteService) {
+    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService) {
         this.docenteService = docenteService;
-        this.modelo = new actividad_1.Actividad();
+        this.tipoActividadService = tipoActividadService;
+        this.semestreService = semestreService;
+        this.dscService = dscService;
+        this.modelo = new reporte_actividad_1.ReporteActividad();
         this.activo = true;
     }
-    RegistroActividadComponent.prototype.ngOnInit = function () { this.consultarDocentes(); };
+    RegistroActividadComponent.prototype.ngOnInit = function () {
+        this.consultarDocentes();
+        this.consultarTipoActividades();
+        this.consultarSemestres();
+    };
     RegistroActividadComponent.prototype.consultarDocentes = function () {
         var _this = this;
         this.docenteService.consultarDocentes()
             .subscribe(function (docentes) { return _this.docentes = docentes; }, function (error) { return _this.mensajeError = error; });
+    };
+    RegistroActividadComponent.prototype.consultarTipoActividades = function () {
+        var _this = this;
+        this.tipoActividadService.consultaTipoActividades()
+            .subscribe(function (tipoActividades) { return _this.tipoActividades = tipoActividades; }, function (error) { return _this.mensajeError = error; });
+    };
+    RegistroActividadComponent.prototype.consultarSemestres = function () {
+        var _this = this;
+        this.semestreService.consultarSemestres()
+            .subscribe(function (semestres) { return _this.semestres = semestres; }, function (error) { return _this.mensajeError = error; });
+    };
+    RegistroActividadComponent.prototype.consultarCursosSemestre = function (docente, semestreCurso) {
+        var _this = this;
+        this.dscService.consultarCursosSemestre(docente, semestreCurso)
+            .subscribe(function (semestreCursos) { return _this.semestreCursos = semestreCursos; }, function (error) { return _this.mensajeError = error; });
+    };
+    RegistroActividadComponent.prototype.onDocenteSemestreChange = function () {
+        if (this.idDocente != undefined && this.idSemestre != undefined) {
+            if (this.idDocente > 0 && this.idSemestre > 0) {
+                this.consultarCursosSemestre(this.idDocente, this.idSemestre);
+            }
+            else {
+                this.borrarListadoCursosSemestre();
+            }
+        }
+        else {
+            this.borrarListadoCursosSemestre();
+        }
+    };
+    RegistroActividadComponent.prototype.borrarListadoCursosSemestre = function () {
+        if (this.semestreCursos != undefined && this.semestreCursos.length > 0) {
+            this.semestreCursos.length = 0;
+        }
     };
     RegistroActividadComponent = __decorate([
         core_1.Component({
@@ -29,7 +72,7 @@ var RegistroActividadComponent = (function () {
             templateUrl: 'app/modulos/actividades/registro-actividad.component.html',
             styleUrls: ['recursos/css/forms.css']
         }), 
-        __metadata('design:paramtypes', [docente_service_1.DocenteService])
+        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService])
     ], RegistroActividadComponent);
     return RegistroActividadComponent;
 }());

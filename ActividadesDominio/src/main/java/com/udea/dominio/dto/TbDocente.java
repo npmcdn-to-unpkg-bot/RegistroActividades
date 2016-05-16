@@ -15,7 +15,7 @@ public class TbDocente implements java.io.Serializable {
 
 	private long nbId;
 	private TbPersona tbPersona;
-	@JsonManagedReference
+//	@JsonManagedReference
 	private Set tbDocenteSemestreCursos = new HashSet(0);
 
 	public TbDocente() {
