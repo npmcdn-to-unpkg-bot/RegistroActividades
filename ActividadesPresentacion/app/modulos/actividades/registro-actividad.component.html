@@ -1,6 +1,6 @@
 <h2>Registro actividad</h2>
 <div class="jumbotron">
-    <form #actividadForm="ngForm">
+    <form #actividadForm="ngForm" (ngSubmit)="guardarRegistroActividad()">
         <div class="row">
             <div class="col-xs-2">Docente</div>
             <div class="col-xs-4">

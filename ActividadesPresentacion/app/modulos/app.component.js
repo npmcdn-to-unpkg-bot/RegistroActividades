@@ -15,6 +15,7 @@ var docente_service_1 = require("../servicios/actividades/docente.service");
 var tipo_actividad_service_1 = require("../servicios/actividades/tipo-actividad.service");
 var semestre_service_1 = require("../servicios/actividades/semestre.service");
 var dsc_service_1 = require("../servicios/actividades/dsc.service");
+var reporte_actividad_service_1 = require("../servicios/actividades/reporte-actividad.service");
 var router_deprecated_1 = require('@angular/router-deprecated');
 var http_1 = require('@angular/http');
 var AppComponent = (function () {
@@ -31,7 +32,8 @@ var AppComponent = (function () {
                 docente_service_1.DocenteService,
                 tipo_actividad_service_1.TipoActividadService,
                 semestre_service_1.SemestreService,
-                dsc_service_1.DscService
+                dsc_service_1.DscService,
+                reporte_actividad_service_1.ReporteActividadService
             ]
         }),
         router_deprecated_1.RouteConfig([

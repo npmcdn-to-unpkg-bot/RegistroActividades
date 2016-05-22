@@ -5,6 +5,7 @@ import {DocenteService} from "../servicios/actividades/docente.service";
 import {TipoActividadService} from "../servicios/actividades/tipo-actividad.service";
 import {SemestreService} from "../servicios/actividades/semestre.service";
 import {DscService} from "../servicios/actividades/dsc.service";
+import {ReporteActividadService} from "../servicios/actividades/reporte-actividad.service";
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HTTP_PROVIDERS }    from '@angular/http';
 @Component({
@@ -18,6 +19,7 @@ import { HTTP_PROVIDERS }    from '@angular/http';
 		,TipoActividadService
 		,SemestreService
 		,DscService
+		,ReporteActividadService
 	]
 })
 @RouteConfig([

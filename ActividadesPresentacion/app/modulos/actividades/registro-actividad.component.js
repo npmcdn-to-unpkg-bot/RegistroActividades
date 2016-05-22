@@ -14,12 +14,14 @@ var docente_service_1 = require('../../servicios/actividades/docente.service');
 var tipo_actividad_service_1 = require('../../servicios/actividades/tipo-actividad.service');
 var semestre_service_1 = require('../../servicios/actividades/semestre.service');
 var dsc_service_1 = require('../../servicios/actividades/dsc.service');
+var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
 var RegistroActividadComponent = (function () {
-    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService) {
+    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService, actividadService) {
         this.docenteService = docenteService;
         this.tipoActividadService = tipoActividadService;
         this.semestreService = semestreService;
         this.dscService = dscService;
+        this.actividadService = actividadService;
         this.modelo = new reporte_actividad_1.ReporteActividad();
         this.activo = true;
     }
@@ -66,13 +68,18 @@ var RegistroActividadComponent = (function () {
             this.semestreCursos.length = 0;
         }
     };
+    RegistroActividadComponent.prototype.guardarRegistroActividad = function () {
+        var _this = this;
+        this.actividadService.reportarActividad(this.modelo)
+            .subscribe(function (resultado) { return _this.resultadoGuardado = resultado; }, function (error) { return _this.mensajeError = error; });
+    };
     RegistroActividadComponent = __decorate([
         core_1.Component({
             selector: 'registro-actividad',
             templateUrl: 'app/modulos/actividades/registro-actividad.component.html',
             styleUrls: ['recursos/css/forms.css']
         }), 
-        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService])
+        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService, reporte_actividad_service_1.ReporteActividadService])
     ], RegistroActividadComponent);
     return RegistroActividadComponent;
 }());

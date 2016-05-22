@@ -11,6 +11,7 @@ import {DocenteService} from '../../servicios/actividades/docente.service';
 import {TipoActividadService} from '../../servicios/actividades/tipo-actividad.service';
 import {SemestreService} from '../../servicios/actividades/semestre.service';
 import {DscService} from '../../servicios/actividades/dsc.service';
+import {ReporteActividadService} from '../../servicios/actividades/reporte-actividad.service';
 
 
 
@@ -24,12 +25,14 @@ export class RegistroActividadComponent implements OnInit {
   constructor(private docenteService: DocenteService
     , private tipoActividadService: TipoActividadService
     , private semestreService: SemestreService
-    , private dscService: DscService) { }
+    , private dscService: DscService
+    , private actividadService:ReporteActividadService) { }
 
   modelo = new ReporteActividad();
   idDocente:Number;
   idSemestre:Number;
   activo = true;
+  resultadoGuardado:Boolean;
 
   docentes: Docente[];
   tipoActividades: TipoActividad[];
@@ -84,5 +87,11 @@ export class RegistroActividadComponent implements OnInit {
       if(this.semestreCursos!=undefined && this.semestreCursos.length>0){
         this.semestreCursos.length=0;
       }
+  }
+  
+  guardarRegistroActividad(){
+      this.actividadService.reportarActividad(this.modelo)
+            .subscribe(resultado=>this.resultadoGuardado=resultado,
+                       error=> this.mensajeError=error);
   }
 }
