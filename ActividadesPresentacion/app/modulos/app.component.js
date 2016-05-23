@@ -46,7 +46,12 @@ var AppComponent = (function () {
                 path: '/consultaactividad',
                 name: 'ConsultaActividad',
                 component: consulta_actividad_component_1.ConsultaActividadComponent
-            }
+            },
+            {
+                path: '/consultaactividadfecha/:id',
+                name: 'ConsultaActividadFecha',
+                component: consulta_actividad_component_1.ConsultaActividadComponent
+            },
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

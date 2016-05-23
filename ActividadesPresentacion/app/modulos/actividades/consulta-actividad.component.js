@@ -9,15 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var ConsultaActividadComponent = (function () {
-    function ConsultaActividadComponent() {
+    function ConsultaActividadComponent(_routeParams) {
+        this._routeParams = _routeParams;
     }
     ConsultaActividadComponent = __decorate([
         core_1.Component({
             selector: 'consulta-actividad',
             templateUrl: 'app/modulos/actividades/consulta-actividad.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], ConsultaActividadComponent);
     return ConsultaActividadComponent;
 }());

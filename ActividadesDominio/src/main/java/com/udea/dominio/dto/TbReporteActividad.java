@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class TbReporteActividad implements java.io.Serializable {
 
-	private BigDecimal nbId;
+	private long nbId;
 	private TbDocenteSemestreCurso tbDocenteSemestreCurso;
 	private TbTipoActividad tbTipoActividad;
 	private Date dtFecha;
@@ -19,7 +19,7 @@ public class TbReporteActividad implements java.io.Serializable {
 	public TbReporteActividad() {
 	}
 
-	public TbReporteActividad(BigDecimal nbId, TbDocenteSemestreCurso tbDocenteSemestreCurso,
+	public TbReporteActividad(long nbId, TbDocenteSemestreCurso tbDocenteSemestreCurso,
 			TbTipoActividad tbTipoActividad, Date dtFecha, BigDecimal nbHoras) {
 		this.nbId = nbId;
 		this.tbDocenteSemestreCurso = tbDocenteSemestreCurso;
@@ -28,7 +28,7 @@ public class TbReporteActividad implements java.io.Serializable {
 		this.nbHoras = nbHoras;
 	}
 
-	public TbReporteActividad(BigDecimal nbId, TbDocenteSemestreCurso tbDocenteSemestreCurso,
+	public TbReporteActividad(long nbId, TbDocenteSemestreCurso tbDocenteSemestreCurso,
 			TbTipoActividad tbTipoActividad, Date dtFecha, BigDecimal nbHoras, String vrDescripcion) {
 		this.nbId = nbId;
 		this.tbDocenteSemestreCurso = tbDocenteSemestreCurso;
@@ -38,11 +38,11 @@ public class TbReporteActividad implements java.io.Serializable {
 		this.vrDescripcion = vrDescripcion;
 	}
 
-	public BigDecimal getNbId() {
+	public long getNbId() {
 		return this.nbId;
 	}
 
-	public void setNbId(BigDecimal nbId) {
+	public void setNbId(long nbId) {
 		this.nbId = nbId;
 	}
 

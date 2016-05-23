@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router-deprecated';
 
 import {Actividad} from '../../modelo/actividades/actividad';
 import {Docente} from '../../modelo/actividades/docente';
@@ -26,9 +27,12 @@ export class RegistroActividadComponent implements OnInit {
     , private tipoActividadService: TipoActividadService
     , private semestreService: SemestreService
     , private dscService: DscService
-    , private actividadService:ReporteActividadService) { }
+    , private actividadService:ReporteActividadService
+    , private router:Router) {
+        this.construirModelo();
+     }
 
-  modelo = new ReporteActividad();
+  modelo:ReporteActividad;
   idDocente:Number;
   idSemestre:Number;
   activo = true;
@@ -40,6 +44,7 @@ export class RegistroActividadComponent implements OnInit {
   semestreCursos: DocenteSemestreCurso[];
 
   mensajeError: string;
+  mensajeSatisfactorio:string;
 
   ngOnInit() {
     this.consultarDocentes();
@@ -90,8 +95,35 @@ export class RegistroActividadComponent implements OnInit {
   }
   
   guardarRegistroActividad(){
+      this.ocultarMensajeError();
       this.actividadService.reportarActividad(this.modelo)
-            .subscribe(resultado=>this.resultadoGuardado=resultado,
-                       error=> this.mensajeError=error);
+            .subscribe(resultado=>this.mostrarMensajeGuardadoSatisfactorio(resultado),
+                       error=>this.mostrarMensajeError(error));
   }
+  
+  private mostrarMensajeGuardadoSatisfactorio(resultado){
+    this.resultadoGuardado=resultado;
+    this.construirModelo();
+    this.router.navigate(["ConsultaActividad"]);
+    // setTimeout(()=>this.ocultarMensajeGuardadoSatisfactorio(),5000);
+  }
+  
+  private ocultarMensajeGuardadoSatisfactorio(){
+    this.resultadoGuardado=null;
+  }
+  
+  private mostrarMensajeError(mensajeError){
+    this.mensajeError=mensajeError;
+  }
+  
+  private ocultarMensajeError(){
+    this.mensajeError=null;
+  }
+  
+  private construirModelo(){
+    this.modelo=new ReporteActividad();
+    this.idDocente=null;
+    this.idSemestre=null;
+  }
+  
 }

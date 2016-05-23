@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var reporte_actividad_1 = require('../../modelo/actividades/reporte-actividad');
 var docente_service_1 = require('../../servicios/actividades/docente.service');
 var tipo_actividad_service_1 = require('../../servicios/actividades/tipo-actividad.service');
@@ -16,14 +17,15 @@ var semestre_service_1 = require('../../servicios/actividades/semestre.service')
 var dsc_service_1 = require('../../servicios/actividades/dsc.service');
 var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
 var RegistroActividadComponent = (function () {
-    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService, actividadService) {
+    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService, actividadService, router) {
         this.docenteService = docenteService;
         this.tipoActividadService = tipoActividadService;
         this.semestreService = semestreService;
         this.dscService = dscService;
         this.actividadService = actividadService;
-        this.modelo = new reporte_actividad_1.ReporteActividad();
+        this.router = router;
         this.activo = true;
+        this.construirModelo();
     }
     RegistroActividadComponent.prototype.ngOnInit = function () {
         this.consultarDocentes();
@@ -70,8 +72,29 @@ var RegistroActividadComponent = (function () {
     };
     RegistroActividadComponent.prototype.guardarRegistroActividad = function () {
         var _this = this;
+        this.ocultarMensajeError();
         this.actividadService.reportarActividad(this.modelo)
-            .subscribe(function (resultado) { return _this.resultadoGuardado = resultado; }, function (error) { return _this.mensajeError = error; });
+            .subscribe(function (resultado) { return _this.mostrarMensajeGuardadoSatisfactorio(resultado); }, function (error) { return _this.mostrarMensajeError(error); });
+    };
+    RegistroActividadComponent.prototype.mostrarMensajeGuardadoSatisfactorio = function (resultado) {
+        this.resultadoGuardado = resultado;
+        this.construirModelo();
+        this.router.navigate(["ConsultaActividad"]);
+        // setTimeout(()=>this.ocultarMensajeGuardadoSatisfactorio(),5000);
+    };
+    RegistroActividadComponent.prototype.ocultarMensajeGuardadoSatisfactorio = function () {
+        this.resultadoGuardado = null;
+    };
+    RegistroActividadComponent.prototype.mostrarMensajeError = function (mensajeError) {
+        this.mensajeError = mensajeError;
+    };
+    RegistroActividadComponent.prototype.ocultarMensajeError = function () {
+        this.mensajeError = null;
+    };
+    RegistroActividadComponent.prototype.construirModelo = function () {
+        this.modelo = new reporte_actividad_1.ReporteActividad();
+        this.idDocente = null;
+        this.idSemestre = null;
     };
     RegistroActividadComponent = __decorate([
         core_1.Component({
@@ -79,7 +102,7 @@ var RegistroActividadComponent = (function () {
             templateUrl: 'app/modulos/actividades/registro-actividad.component.html',
             styleUrls: ['recursos/css/forms.css']
         }), 
-        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService, reporte_actividad_service_1.ReporteActividadService])
+        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService, reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.Router])
     ], RegistroActividadComponent);
     return RegistroActividadComponent;
 }());

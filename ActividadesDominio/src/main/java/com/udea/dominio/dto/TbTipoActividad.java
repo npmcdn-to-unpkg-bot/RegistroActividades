@@ -4,6 +4,7 @@ package com.udea.dominio.dto;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -15,7 +16,7 @@ public class TbTipoActividad implements java.io.Serializable {
 	private String vrNombre;
 	private String vrDescripcion;
 	
-	@JsonIgnore
+	@JsonBackReference
 	private Set tbReporteActividads = new HashSet(0);
 
 	public TbTipoActividad() {
@@ -57,12 +58,10 @@ public class TbTipoActividad implements java.io.Serializable {
 		this.vrDescripcion = vrDescripcion;
 	}
 
-	@JsonIgnore
 	public Set getTbReporteActividads() {
 		return this.tbReporteActividads;
 	}
-
-	@JsonIgnore
+	
 	public void setTbReporteActividads(Set tbReporteActividads) {
 		this.tbReporteActividads = tbReporteActividads;
 	}

@@ -32,6 +32,11 @@ import { HTTP_PROVIDERS }    from '@angular/http';
 	path: '/consultaactividad',
 	name: 'ConsultaActividad',
 	component: ConsultaActividadComponent
-  }
+  },
+	{
+	path: '/consultaactividadfecha/:id',
+	name: 'ConsultaActividadFecha',
+	component: ConsultaActividadComponent
+  },
 ])
 export class AppComponent { }

@@ -18,7 +18,7 @@ public class TbDocenteSemestreCurso implements java.io.Serializable {
 //	@JsonBackReference
 	private TbSemestreCurso tbSemestreCurso;
 	
-	@JsonIgnore
+	@JsonBackReference
 	private Set tbReporteActividads = new HashSet(0);
 
 	public TbDocenteSemestreCurso() {
@@ -62,12 +62,10 @@ public class TbDocenteSemestreCurso implements java.io.Serializable {
 		this.tbSemestreCurso = tbSemestreCurso;
 	}
 
-	@JsonIgnore
 	public Set getTbReporteActividads() {
 		return this.tbReporteActividads;
 	}
 
-	@JsonIgnore
 	public void setTbReporteActividads(Set tbReporteActividads) {
 		this.tbReporteActividads = tbReporteActividads;
 	}
