@@ -1,1 +1,1 @@
-{"version":3,"file":"reporte-actividad.js","sourceRoot":"","sources":["reporte-actividad.ts"],"names":[],"mappings":";AAGA;IAAA;IAcA,CAAC;IAAD,uBAAC;AAAD,CAAC,AAdD,IAcC;AAdY,wBAAgB,mBAc5B,CAAA"}
+{"version":3,"file":"reporte-actividad.js","sourceRoot":"","sources":["reporte-actividad.ts"],"names":[],"mappings":";AAAA,uCAAmC,0BAA0B,CAAC,CAAA;AAC9D,+BAA4B,kBAAkB,CAAC,CAAA;AAE/C;IACI;QACI,IAAI,CAAC,sBAAsB,GAAC,IAAI,6CAAoB,EAAE,CAAC;QACvD,IAAI,CAAC,eAAe,GAAC,IAAI,8BAAa,EAAE,CAAC;IAC7C,CAAC;IAOL,uBAAC;AAAD,CAAC,AAXD,IAWC;AAXY,wBAAgB,mBAW5B,CAAA"}

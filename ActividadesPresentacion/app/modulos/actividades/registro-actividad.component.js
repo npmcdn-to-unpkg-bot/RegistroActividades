@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var reporte_actividad_1 = require('../../modelo/actividades/reporte-actividad');
+var reporte_actividad_light_1 = require('../../modelo/actividades/reporte-actividad-light');
 var docente_service_1 = require('../../servicios/actividades/docente.service');
 var tipo_actividad_service_1 = require('../../servicios/actividades/tipo-actividad.service');
 var semestre_service_1 = require('../../servicios/actividades/semestre.service');
@@ -92,7 +92,7 @@ var RegistroActividadComponent = (function () {
         this.mensajeError = null;
     };
     RegistroActividadComponent.prototype.construirModelo = function () {
-        this.modelo = new reporte_actividad_1.ReporteActividad();
+        this.modelo = new reporte_actividad_light_1.ReporteActividadLight();
         this.idDocente = null;
         this.idSemestre = null;
     };

@@ -16,7 +16,6 @@ public class TbTipoActividad implements java.io.Serializable {
 	private String vrNombre;
 	private String vrDescripcion;
 	
-	@JsonBackReference
 	private Set tbReporteActividads = new HashSet(0);
 
 	public TbTipoActividad() {
@@ -58,6 +57,7 @@ public class TbTipoActividad implements java.io.Serializable {
 		this.vrDescripcion = vrDescripcion;
 	}
 
+	@JsonIgnore
 	public Set getTbReporteActividads() {
 		return this.tbReporteActividads;
 	}

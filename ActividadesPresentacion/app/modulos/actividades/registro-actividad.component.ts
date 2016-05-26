@@ -6,7 +6,7 @@ import {Docente} from '../../modelo/actividades/docente';
 import {TipoActividad} from '../../modelo/actividades/tipo-actividad';
 import {Semestre} from '../../modelo/actividades/semestre';
 import {DocenteSemestreCurso} from '../../modelo/actividades/docente-semestre-curso';
-import {ReporteActividad} from '../../modelo/actividades/reporte-actividad';
+import {ReporteActividadLight} from '../../modelo/actividades/reporte-actividad-light';
 
 import {DocenteService} from '../../servicios/actividades/docente.service';
 import {TipoActividadService} from '../../servicios/actividades/tipo-actividad.service';
@@ -32,7 +32,7 @@ export class RegistroActividadComponent implements OnInit {
         this.construirModelo();
      }
 
-  modelo:ReporteActividad;
+  modelo:ReporteActividadLight;
   idDocente:Number;
   idSemestre:Number;
   activo = true;
@@ -121,7 +121,7 @@ export class RegistroActividadComponent implements OnInit {
   }
   
   private construirModelo(){
-    this.modelo=new ReporteActividad();
+    this.modelo=new ReporteActividadLight();
     this.idDocente=null;
     this.idSemestre=null;
   }

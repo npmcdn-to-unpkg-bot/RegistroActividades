@@ -10,16 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
 var ConsultaActividadComponent = (function () {
-    function ConsultaActividadComponent(_routeParams) {
-        this._routeParams = _routeParams;
+    function ConsultaActividadComponent(actividadService, routeParams) {
+        this.actividadService = actividadService;
+        this.routeParams = routeParams;
     }
+    ConsultaActividadComponent.prototype.ngOnInit = function () {
+        var fechaActividad = new Date();
+        if (this.routeParams.get("fechaActividad") != null) {
+            fechaActividad = new Date(this.routeParams.get("fechaActividad"));
+        }
+        this.consultarActividades(fechaActividad);
+    };
+    ConsultaActividadComponent.prototype.consultarActividades = function (fechaActividad) {
+        var _this = this;
+        this.actividadService.consultarAcividades(fechaActividad)
+            .subscribe(function (actividades) { return _this.actividades = actividades; }, function (error) { return _this.mensajeError = error; });
+    };
     ConsultaActividadComponent = __decorate([
         core_1.Component({
             selector: 'consulta-actividad',
             templateUrl: 'app/modulos/actividades/consulta-actividad.component.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.RouteParams])
     ], ConsultaActividadComponent);
     return ConsultaActividadComponent;
 }());

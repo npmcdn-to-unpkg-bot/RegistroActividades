@@ -56,5 +56,4 @@ public class ReporteActividadNgc implements ReporteActividadNgcInt {
 			throw expNgc;
 		}
 	}
-
 }

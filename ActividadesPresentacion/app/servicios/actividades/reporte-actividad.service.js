@@ -16,22 +16,38 @@ var ReporteActividadService = (function () {
     function ReporteActividadService(http) {
         this.http = http;
         this.serviceUrl = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/registrar';
+        this.serviceUrlConsultar = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultar';
     }
     ReporteActividadService.prototype.reportarActividad = function (datosActividad) {
         var datos = JSON.stringify(datosActividad);
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var opciones = new http_2.RequestOptions({ headers: headers });
         return this.http.post(this.serviceUrl, datos, opciones)
-            .map(this.construirResultado)
+            .map(this.construirResultadoReportar)
             .catch(this.menejarError);
     };
-    ReporteActividadService.prototype.construirResultado = function () {
+    ReporteActividadService.prototype.construirResultadoReportar = function () {
         return true;
     };
     ReporteActividadService.prototype.menejarError = function (error) {
         var errMsg = error.message || error.statusText || 'Error reportando actividad';
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
+    };
+    ReporteActividadService.prototype.consultarAcividades = function (fecha) {
+        var datos = JSON.stringify(fecha);
+        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+        var opciones = new http_2.RequestOptions({ headers: headers });
+        return this.http.post(this.serviceUrlConsultar, datos, opciones)
+            .map(this.construirResultadoConsultar)
+            .catch(this.menejarError);
+    };
+    ReporteActividadService.prototype.construirResultadoConsultar = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body || [];
     };
     ReporteActividadService = __decorate([
         core_1.Injectable(), 

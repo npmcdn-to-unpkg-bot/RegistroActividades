@@ -38,17 +38,17 @@ public class ReporteActividadDaoHibernate extends HibernateDaoSupport implements
 			session = getSession();
 			
 			StringBuilder hqlString=new StringBuilder();
-			hqlString.append("FROM TbTipoActividad ");
-			hqlString.append("WHERE dtFecha BETWEEN :fechaInicial AND :fechaFinal");
+			hqlString.append("FROM TbReporteActividad as ra ");
+			hqlString.append("WHERE ra.dtFecha BETWEEN :fechaInicial AND :fechaFinal");
 			
 			Query query=session.createQuery(hqlString.toString());
 			query.setDate("fechaInicial", fechaInicialSemana);
 			query.setDate("fechaFinal", fechaFinalSemana);
 			
-			List<TbReporteActividad> tipoActividades=query.list();
+			List<TbReporteActividad> reporteActividades=query.list();
 			
 			session.flush();
-			return tipoActividades;
+			return reporteActividades;
 		}catch(Exception e){
 			//Rollback
 			ExcepcionDao expDao = new ExcepcionDao();
