@@ -11,22 +11,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
+var semana_1 = require('../../modelo/actividades/semana');
 var ConsultaActividadComponent = (function () {
     function ConsultaActividadComponent(actividadService, routeParams) {
         this.actividadService = actividadService;
         this.routeParams = routeParams;
+        this.semana = new semana_1.Semana();
     }
     ConsultaActividadComponent.prototype.ngOnInit = function () {
         var fechaActividad = new Date();
         if (this.routeParams.get("fechaActividad") != null) {
             fechaActividad = new Date(this.routeParams.get("fechaActividad"));
         }
-        this.consultarActividades(fechaActividad);
+        this.consultar(fechaActividad, 0);
     };
     ConsultaActividadComponent.prototype.consultarActividades = function (fechaActividad) {
         var _this = this;
         this.actividadService.consultarAcividades(fechaActividad)
             .subscribe(function (actividades) { return _this.actividades = actividades; }, function (error) { return _this.mensajeError = error; });
+    };
+    ConsultaActividadComponent.prototype.consultarSemana = function (fechaActividad) {
+        var _this = this;
+        this.actividadService.consultarSemana(fechaActividad)
+            .subscribe(function (semana) { return _this.semana = semana; }, function (error) { return _this.mensajeError = error; });
+    };
+    ConsultaActividadComponent.prototype.consultar = function (fechaActividad, incrementar) {
+        var milisegundos;
+        if (fechaActividad.getTime) {
+            milisegundos = fechaActividad.getTime() + (incrementar * 100 * 60 * 60 * 24);
+        }
+        else {
+            milisegundos = fechaActividad + (incrementar * 100 * 60 * 60 * 24);
+        }
+        var fechaModificada = new Date(milisegundos);
+        this.consultarActividades(fechaModificada);
+        this.consultarSemana(fechaModificada);
     };
     ConsultaActividadComponent = __decorate([
         core_1.Component({

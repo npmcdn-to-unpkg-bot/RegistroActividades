@@ -39,7 +39,8 @@ public class ReporteActividadDaoHibernate extends HibernateDaoSupport implements
 			
 			StringBuilder hqlString=new StringBuilder();
 			hqlString.append("FROM TbReporteActividad as ra ");
-			hqlString.append("WHERE ra.dtFecha BETWEEN :fechaInicial AND :fechaFinal");
+			hqlString.append("WHERE ra.dtFecha BETWEEN :fechaInicial AND :fechaFinal ");
+			hqlString.append("ORDER BY ra.dtFecha DESC");
 			
 			Query query=session.createQuery(hqlString.toString());
 			query.setDate("fechaInicial", fechaInicialSemana);

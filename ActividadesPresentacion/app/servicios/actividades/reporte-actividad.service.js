@@ -17,6 +17,7 @@ var ReporteActividadService = (function () {
         this.http = http;
         this.serviceUrl = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/registrar';
         this.serviceUrlConsultar = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultar';
+        this.serviceUrlConsultarSemana = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultarSemana';
     }
     ReporteActividadService.prototype.reportarActividad = function (datosActividad) {
         var datos = JSON.stringify(datosActividad);
@@ -30,7 +31,7 @@ var ReporteActividadService = (function () {
         return true;
     };
     ReporteActividadService.prototype.menejarError = function (error) {
-        var errMsg = error.message || error.statusText || 'Error reportando actividad';
+        var errMsg = error.message || error.statusText || 'Error en servicio de actividades';
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
@@ -39,15 +40,30 @@ var ReporteActividadService = (function () {
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var opciones = new http_2.RequestOptions({ headers: headers });
         return this.http.post(this.serviceUrlConsultar, datos, opciones)
-            .map(this.construirResultadoConsultar)
+            .map(this.construirResultadoListado)
             .catch(this.menejarError);
     };
-    ReporteActividadService.prototype.construirResultadoConsultar = function (res) {
+    ReporteActividadService.prototype.construirResultadoListado = function (res) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
         }
         var body = res.json();
         return body || [];
+    };
+    ReporteActividadService.prototype.consultarSemana = function (fecha) {
+        var datos = JSON.stringify(fecha);
+        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+        var opciones = new http_2.RequestOptions({ headers: headers });
+        return this.http.post(this.serviceUrlConsultarSemana, datos, opciones)
+            .map(this.construirResultadoEntidad)
+            .catch(this.menejarError);
+    };
+    ReporteActividadService.prototype.construirResultadoEntidad = function (res) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        var body = res.json();
+        return body || {};
     };
     ReporteActividadService = __decorate([
         core_1.Injectable(), 

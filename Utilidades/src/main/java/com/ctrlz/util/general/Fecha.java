@@ -45,4 +45,12 @@ public class Fecha {
 		calendario.set(Calendar.MILLISECOND,0);
 		return calendario;
 	}
+	
+	public static short getSemana(Date fecha){
+		Calendar calendario=Calendar.getInstance();
+		calendario.setFirstDayOfWeek(Calendar.SUNDAY);
+		calendario.setTime(fecha);
+		short semana=(short)calendario.get(Calendar.WEEK_OF_YEAR);
+		return semana;
+	}
 }

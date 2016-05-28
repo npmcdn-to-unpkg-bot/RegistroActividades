@@ -77,10 +77,7 @@ var RegistroActividadComponent = (function () {
             .subscribe(function (resultado) { return _this.mostrarMensajeGuardadoSatisfactorio(resultado); }, function (error) { return _this.mostrarMensajeError(error); });
     };
     RegistroActividadComponent.prototype.mostrarMensajeGuardadoSatisfactorio = function (resultado) {
-        this.resultadoGuardado = resultado;
-        this.construirModelo();
-        this.router.navigate(["ConsultaActividad"]);
-        // setTimeout(()=>this.ocultarMensajeGuardadoSatisfactorio(),5000);
+        this.router.navigate(["ConsultaActividad", this.modelo.dtFecha.getTime]);
     };
     RegistroActividadComponent.prototype.ocultarMensajeGuardadoSatisfactorio = function () {
         this.resultadoGuardado = null;

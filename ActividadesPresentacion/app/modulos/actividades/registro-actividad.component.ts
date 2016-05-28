@@ -102,10 +102,7 @@ export class RegistroActividadComponent implements OnInit {
   }
   
   private mostrarMensajeGuardadoSatisfactorio(resultado){
-    this.resultadoGuardado=resultado;
-    this.construirModelo();
-    this.router.navigate(["ConsultaActividad"]);
-    // setTimeout(()=>this.ocultarMensajeGuardadoSatisfactorio(),5000);
+    this.router.navigate(["ConsultaActividad",this.modelo.dtFecha.getTime]);
   }
   
   private ocultarMensajeGuardadoSatisfactorio(){
