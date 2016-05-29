@@ -28,13 +28,18 @@ import { HTTP_PROVIDERS }    from '@angular/http';
 	name: 'RegistroActividad',
 	component: RegistroActividadComponent
   },
+	{
+	path: '/edicionactividad/:id',
+	name: 'EdicionActividad',
+	component: RegistroActividadComponent
+  },
   {
 	path: '/consultaactividad',
 	name: 'ConsultaActividad',
 	component: ConsultaActividadComponent
   },
 	{
-	path: '/consultaactividadfecha/:id',
+	path: '/consultaactividadfecha/:fecha',
 	name: 'ConsultaActividadFecha',
 	component: ConsultaActividadComponent
   },

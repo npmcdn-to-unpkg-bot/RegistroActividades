@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { RouteParams, Router } from '@angular/router-deprecated';
 
 import {Actividad} from '../../modelo/actividades/actividad';
 import {Docente} from '../../modelo/actividades/docente';
@@ -7,6 +7,7 @@ import {TipoActividad} from '../../modelo/actividades/tipo-actividad';
 import {Semestre} from '../../modelo/actividades/semestre';
 import {DocenteSemestreCurso} from '../../modelo/actividades/docente-semestre-curso';
 import {ReporteActividadLight} from '../../modelo/actividades/reporte-actividad-light';
+import {ReporteActividad} from '../../modelo/actividades/reporte-actividad';
 
 import {DocenteService} from '../../servicios/actividades/docente.service';
 import {TipoActividadService} from '../../servicios/actividades/tipo-actividad.service';
@@ -27,16 +28,17 @@ export class RegistroActividadComponent implements OnInit {
     , private tipoActividadService: TipoActividadService
     , private semestreService: SemestreService
     , private dscService: DscService
-    , private actividadService:ReporteActividadService
-    , private router:Router) {
-        this.construirModelo();
-     }
+    , private actividadService: ReporteActividadService
+    , private router: Router
+    , private routeParams: RouteParams) {
+    this.construirModelo();
+  }
 
-  modelo:ReporteActividadLight;
-  idDocente:Number;
-  idSemestre:Number;
+  modelo: ReporteActividadLight;
+  reporteActividad: ReporteActividad;
+  idDocente: Number;
+  idSemestre: Number;
   activo = true;
-  resultadoGuardado:Boolean;
 
   docentes: Docente[];
   tipoActividades: TipoActividad[];
@@ -44,12 +46,30 @@ export class RegistroActividadComponent implements OnInit {
   semestreCursos: DocenteSemestreCurso[];
 
   mensajeError: string;
-  mensajeSatisfactorio:string;
+  mensajeSatisfactorio: string;
+
+  esEdicion: Boolean;
+  idActividad: Number;
 
   ngOnInit() {
+    this.esEdicion = this.establecerFormularioParaEdicion();
+    if (this.esEdicion == true) {
+      this.consultarActividadPorId();
+    }
     this.consultarDocentes();
     this.consultarTipoActividades();
     this.consultarSemestres();
+
+  }
+
+  establecerFormularioParaEdicion(): Boolean {
+    let esEdicion = false;
+    if (this.routeParams.get("id") != null) {
+      this.idActividad = new Number(this.routeParams.get("id"));
+      esEdicion = true;
+    }
+
+    return esEdicion;
   }
 
   consultarDocentes() {
@@ -71,56 +91,89 @@ export class RegistroActividadComponent implements OnInit {
   }
 
   consultarCursosSemestre(docente: Number, semestreCurso: Number) {
-    this.dscService.consultarCursosSemestre(docente,semestreCurso)
-      .subscribe(semestreCursos => this.semestreCursos = semestreCursos,
+    this.dscService.consultarCursosSemestre(docente, semestreCurso)
+      .subscribe(semestreCursos => this.postConsultarCursosSemestre(semestreCursos),
       error => this.mensajeError = <any>error);
   }
-  
-  onDocenteSemestreChange(){
-    if(this.idDocente != undefined && this.idSemestre!=undefined){
-      if(this.idDocente>0 && this.idSemestre>0){
-        this.consultarCursosSemestre(this.idDocente,this.idSemestre);
-      }else{
+
+  postConsultarCursosSemestre(semestres: DocenteSemestreCurso[]) {
+    this.semestreCursos = semestres;
+    if (this.esEdicion == true) {
+      this.cargarModeloReporteActividadEdicion();
+    }
+  }
+
+  onDocenteSemestreChange() {
+    if (this.idDocente != undefined && this.idSemestre != undefined) {
+      if (this.idDocente > 0 && this.idSemestre > 0) {
+        this.consultarCursosSemestre(this.idDocente, this.idSemestre);
+      } else {
         this.borrarListadoCursosSemestre();
       }
-    }else{
+    } else {
       this.borrarListadoCursosSemestre();
     }
   }
-  
-  private borrarListadoCursosSemestre(){
-      if(this.semestreCursos!=undefined && this.semestreCursos.length>0){
-        this.semestreCursos.length=0;
-      }
+
+  guardarRegistroActividad() {
+    this.ocultarMensajeError();
+    let fecha = new Date(this.modelo.dtFecha.toString());
+    this.modelo.dtFecha = new Date((fecha.getTime() + (1000 * 60 * 60 * 24)));
+    this.actividadService.reportarActividad(this.modelo)
+      .subscribe(resultado => this.postGuardarRegistroActividad(resultado),
+      error => this.mostrarMensajeError(error));
   }
-  
-  guardarRegistroActividad(){
-      this.ocultarMensajeError();
-      this.actividadService.reportarActividad(this.modelo)
-            .subscribe(resultado=>this.mostrarMensajeGuardadoSatisfactorio(resultado),
-                       error=>this.mostrarMensajeError(error));
+
+  consultarActividadPorId() {
+    this.actividadService.consultarActividadPorId(this.idActividad).subscribe(
+      actividad => this.postConsultaActividadPorId(actividad)
+      , error => this.mostrarMensajeError(error)
+    )
   }
-  
-  private mostrarMensajeGuardadoSatisfactorio(resultado){
-    this.router.navigate(["ConsultaActividad",this.modelo.dtFecha.getTime]);
+
+  private cargarModeloReporteActividadEdicion() {
+     this.idDocente=this.reporteActividad.tbDocenteSemestreCurso.tbDocente.nbId;
+     this.idSemestre=this.reporteActividad.tbDocenteSemestreCurso.tbSemestreCurso.tbSemestre.nbId;
+     
+     this.modelo=new ReporteActividadLight();
+     this.modelo.nbId=this.reporteActividad.nbId;
+     this.modelo.idDocenteSemestreCurso=this.reporteActividad.tbDocenteSemestreCurso.nbId;
+     this.modelo.idTipoActividad=this.reporteActividad.tbTipoActividad.nbId;
+     this.modelo.dtFecha=this.reporteActividad.dtFecha;
+     this.modelo.nbHoras=this.reporteActividad.nbHoras;
+     this.modelo.vrDescripcion=this.reporteActividad.vrDescripcion;     
   }
-  
-  private ocultarMensajeGuardadoSatisfactorio(){
-    this.resultadoGuardado=null;
+
+  private borrarListadoCursosSemestre() {
+    if (this.semestreCursos != undefined && this.semestreCursos.length > 0) {
+      this.semestreCursos.length = 0;
+    }
   }
-  
-  private mostrarMensajeError(mensajeError){
-    this.mensajeError=mensajeError;
+
+  private postConsultaActividadPorId(actividad: ReporteActividad) {
+    this.reporteActividad = actividad;
+    this.consultarCursosSemestre(this.reporteActividad.tbDocenteSemestreCurso.tbDocente.nbId
+      , this.reporteActividad.tbDocenteSemestreCurso.tbSemestreCurso.tbSemestre.nbId);
   }
-  
-  private ocultarMensajeError(){
-    this.mensajeError=null;
+
+  private postGuardarRegistroActividad(resultado) {
+    let fechaString = this.modelo.dtFecha.toString();
+    let fecha = new Date(fechaString);
+    this.router.navigate(["ConsultaActividadFecha", { fecha: fecha.getTime() }]);
   }
-  
-  private construirModelo(){
-    this.modelo=new ReporteActividadLight();
-    this.idDocente=null;
-    this.idSemestre=null;
+
+  private mostrarMensajeError(mensajeError) {
+    this.mensajeError = mensajeError;
   }
-  
+
+  private ocultarMensajeError() {
+    this.mensajeError = null;
+  }
+
+  private construirModelo() {
+    this.modelo = new ReporteActividadLight();
+    this.idDocente = null;
+    this.idSemestre = null;
+  }
+
 }

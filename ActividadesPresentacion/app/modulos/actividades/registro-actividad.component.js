@@ -17,20 +17,33 @@ var semestre_service_1 = require('../../servicios/actividades/semestre.service')
 var dsc_service_1 = require('../../servicios/actividades/dsc.service');
 var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
 var RegistroActividadComponent = (function () {
-    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService, actividadService, router) {
+    function RegistroActividadComponent(docenteService, tipoActividadService, semestreService, dscService, actividadService, router, routeParams) {
         this.docenteService = docenteService;
         this.tipoActividadService = tipoActividadService;
         this.semestreService = semestreService;
         this.dscService = dscService;
         this.actividadService = actividadService;
         this.router = router;
+        this.routeParams = routeParams;
         this.activo = true;
         this.construirModelo();
     }
     RegistroActividadComponent.prototype.ngOnInit = function () {
+        this.esEdicion = this.establecerFormularioParaEdicion();
+        if (this.esEdicion == true) {
+            this.consultarActividadPorId();
+        }
         this.consultarDocentes();
         this.consultarTipoActividades();
         this.consultarSemestres();
+    };
+    RegistroActividadComponent.prototype.establecerFormularioParaEdicion = function () {
+        var esEdicion = false;
+        if (this.routeParams.get("id") != null) {
+            this.idActividad = new Number(this.routeParams.get("id"));
+            esEdicion = true;
+        }
+        return esEdicion;
     };
     RegistroActividadComponent.prototype.consultarDocentes = function () {
         var _this = this;
@@ -50,7 +63,13 @@ var RegistroActividadComponent = (function () {
     RegistroActividadComponent.prototype.consultarCursosSemestre = function (docente, semestreCurso) {
         var _this = this;
         this.dscService.consultarCursosSemestre(docente, semestreCurso)
-            .subscribe(function (semestreCursos) { return _this.semestreCursos = semestreCursos; }, function (error) { return _this.mensajeError = error; });
+            .subscribe(function (semestreCursos) { return _this.postConsultarCursosSemestre(semestreCursos); }, function (error) { return _this.mensajeError = error; });
+    };
+    RegistroActividadComponent.prototype.postConsultarCursosSemestre = function (semestres) {
+        this.semestreCursos = semestres;
+        if (this.esEdicion == true) {
+            this.cargarModeloReporteActividadEdicion();
+        }
     };
     RegistroActividadComponent.prototype.onDocenteSemestreChange = function () {
         if (this.idDocente != undefined && this.idSemestre != undefined) {
@@ -65,22 +84,42 @@ var RegistroActividadComponent = (function () {
             this.borrarListadoCursosSemestre();
         }
     };
+    RegistroActividadComponent.prototype.guardarRegistroActividad = function () {
+        var _this = this;
+        this.ocultarMensajeError();
+        var fecha = new Date(this.modelo.dtFecha.toString());
+        this.modelo.dtFecha = new Date((fecha.getTime() + (1000 * 60 * 60 * 24)));
+        this.actividadService.reportarActividad(this.modelo)
+            .subscribe(function (resultado) { return _this.postGuardarRegistroActividad(resultado); }, function (error) { return _this.mostrarMensajeError(error); });
+    };
+    RegistroActividadComponent.prototype.consultarActividadPorId = function () {
+        var _this = this;
+        this.actividadService.consultarActividadPorId(this.idActividad).subscribe(function (actividad) { return _this.postConsultaActividadPorId(actividad); }, function (error) { return _this.mostrarMensajeError(error); });
+    };
+    RegistroActividadComponent.prototype.cargarModeloReporteActividadEdicion = function () {
+        this.idDocente = this.reporteActividad.tbDocenteSemestreCurso.tbDocente.nbId;
+        this.idSemestre = this.reporteActividad.tbDocenteSemestreCurso.tbSemestreCurso.tbSemestre.nbId;
+        this.modelo = new reporte_actividad_light_1.ReporteActividadLight();
+        this.modelo.nbId = this.reporteActividad.nbId;
+        this.modelo.idDocenteSemestreCurso = this.reporteActividad.tbDocenteSemestreCurso.nbId;
+        this.modelo.idTipoActividad = this.reporteActividad.tbTipoActividad.nbId;
+        this.modelo.dtFecha = this.reporteActividad.dtFecha;
+        this.modelo.nbHoras = this.reporteActividad.nbHoras;
+        this.modelo.vrDescripcion = this.reporteActividad.vrDescripcion;
+    };
     RegistroActividadComponent.prototype.borrarListadoCursosSemestre = function () {
         if (this.semestreCursos != undefined && this.semestreCursos.length > 0) {
             this.semestreCursos.length = 0;
         }
     };
-    RegistroActividadComponent.prototype.guardarRegistroActividad = function () {
-        var _this = this;
-        this.ocultarMensajeError();
-        this.actividadService.reportarActividad(this.modelo)
-            .subscribe(function (resultado) { return _this.mostrarMensajeGuardadoSatisfactorio(resultado); }, function (error) { return _this.mostrarMensajeError(error); });
+    RegistroActividadComponent.prototype.postConsultaActividadPorId = function (actividad) {
+        this.reporteActividad = actividad;
+        this.consultarCursosSemestre(this.reporteActividad.tbDocenteSemestreCurso.tbDocente.nbId, this.reporteActividad.tbDocenteSemestreCurso.tbSemestreCurso.tbSemestre.nbId);
     };
-    RegistroActividadComponent.prototype.mostrarMensajeGuardadoSatisfactorio = function (resultado) {
-        this.router.navigate(["ConsultaActividad", this.modelo.dtFecha.getTime]);
-    };
-    RegistroActividadComponent.prototype.ocultarMensajeGuardadoSatisfactorio = function () {
-        this.resultadoGuardado = null;
+    RegistroActividadComponent.prototype.postGuardarRegistroActividad = function (resultado) {
+        var fechaString = this.modelo.dtFecha.toString();
+        var fecha = new Date(fechaString);
+        this.router.navigate(["ConsultaActividadFecha", { fecha: fecha.getTime() }]);
     };
     RegistroActividadComponent.prototype.mostrarMensajeError = function (mensajeError) {
         this.mensajeError = mensajeError;
@@ -99,7 +138,7 @@ var RegistroActividadComponent = (function () {
             templateUrl: 'app/modulos/actividades/registro-actividad.component.html',
             styleUrls: ['recursos/css/forms.css']
         }), 
-        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService, reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [docente_service_1.DocenteService, tipo_actividad_service_1.TipoActividadService, semestre_service_1.SemestreService, dsc_service_1.DscService, reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.Router, router_deprecated_1.RouteParams])
     ], RegistroActividadComponent);
     return RegistroActividadComponent;
 }());

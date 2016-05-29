@@ -10,16 +10,16 @@ import com.udea.dominio.dto.TbTipoActividad;
 
 public class ReporteActividadModel implements java.io.Serializable {
 	
-	private BigDecimal nbId;
+	private long nbId;
 	private int idDocenteSemestreCurso;
 	private int idTipoActividad;
 	private Date dtFecha;
 	private BigDecimal nbHoras;
 	private String vrDescripcion;
-	public BigDecimal getNbId() {
+	public long getNbId() {
 		return nbId;
 	}
-	public void setNbId(BigDecimal nbId) {
+	public void setNbId(long nbId) {
 		this.nbId = nbId;
 	}
 	public int getIdDocenteSemestreCurso() {
@@ -59,6 +59,7 @@ public class ReporteActividadModel implements java.io.Serializable {
 		reporteActividad.setTbDocenteSemestreCurso(new TbDocenteSemestreCurso());
 		reporteActividad.setTbTipoActividad(new TbTipoActividad());
 		
+		reporteActividad.setNbId(this.nbId);
 		reporteActividad.getTbDocenteSemestreCurso().setNbId(this.idDocenteSemestreCurso);
 		reporteActividad.getTbTipoActividad().setNbId(this.idTipoActividad);
 		reporteActividad.setDtFecha(this.dtFecha);

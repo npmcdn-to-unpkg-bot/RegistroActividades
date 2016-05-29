@@ -8,32 +8,32 @@ import {Semana} from "../../modelo/actividades/semana";
 
 @Injectable()
 export class ReporteActividadService {
-    
+
     constructor(private http: Http) { }
 
     private serviceUrl = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/registrar';
-    private serviceUrlConsultar='http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultar';
-    private serviceUrlConsultarSemana='http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultarSemana';
-    reportarActividad(datosActividad: ReporteActividadLight):Observable<Boolean> {
+    private serviceUrlConsultar = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultar';
+    private serviceUrlConsultarSemana = 'http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultarSemana';
+    reportarActividad(datosActividad: ReporteActividadLight): Observable<Boolean> {
         let datos = JSON.stringify(datosActividad);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let opciones = new RequestOptions({ headers: headers });
         return this.http.post(this.serviceUrl, datos, opciones)
-            .map(this.construirResultadoReportar)
+            .map(this.postReportarActividad)
             .catch(this.menejarError);
     }
 
-    private construirResultadoReportar() {
+    private postReportarActividad() {
         return true;
     }
 
     private menejarError(error: any) {
         let errMsg = error.message || error.statusText || 'Error en servicio de actividades';
-        console.error(errMsg); // log to console instead
+        console.error(errMsg);
         return Observable.throw(errMsg);
     }
-    
-    consultarAcividades(fecha:Date): Observable<ReporteActividad[]>{
+
+    consultarAcividades(fecha: Date): Observable<ReporteActividad[]> {
         let datos = JSON.stringify(fecha);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let opciones = new RequestOptions({ headers: headers });
@@ -41,17 +41,8 @@ export class ReporteActividadService {
             .map(this.construirResultadoListado)
             .catch(this.menejarError);
     }
-    
-    private construirResultadoListado(res:Response){
-        if (res.status < 200 || res.status >= 300) {
-            throw new Error('Bad response status: ' + res.status);
-        }
-        let body = res.json();
-        return body || [];
-    }
-    
-    consultarSemana(fecha:Date):Observable<Semana>
-    {
+
+    consultarSemana(fecha: Date): Observable<Semana> {
         let datos = JSON.stringify(fecha);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let opciones = new RequestOptions({ headers: headers });
@@ -60,7 +51,33 @@ export class ReporteActividadService {
             .catch(this.menejarError);
     }
     
-    private construirResultadoEntidad(res:Response){
+    consultarActividadPorId(idActividad:Number):Observable<ReporteActividad>{
+        let serviceUrlConsultarPorId = `http://localhost:8084/ActividadesWeb/rest/reporteactividad/consultarPorId/${idActividad}`;
+        return this.http.get(serviceUrlConsultarPorId)
+            .map(this.construirResultadoEntidad)
+            .catch(this.menejarError);
+    }
+    
+    eliminarActividad(idActividad:Number):Observable<Boolean>{
+        let serviceUrlEliminar = `http://localhost:8084/ActividadesWeb/rest/reporteactividad/eliminar/${idActividad}`;
+        return this.http.get(serviceUrlEliminar)
+            .map(this.postEliminarActividad)
+            .catch(this.menejarError);
+    }
+    
+    private postEliminarActividad(){
+        return true;
+    }
+
+    private construirResultadoListado(res: Response) {
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Bad response status: ' + res.status);
+        }
+        let body = res.json();
+        return body || [];
+    }
+
+    private construirResultadoEntidad(res: Response) {
         if (res.status < 200 || res.status >= 300) {
             throw new Error('Bad response status: ' + res.status);
         }

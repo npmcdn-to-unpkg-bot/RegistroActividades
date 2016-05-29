@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+import { RouteParams, Router } from '@angular/router-deprecated';
 
 import {ReporteActividadService} from '../../servicios/actividades/reporte-actividad.service';
 import {ReporteActividad} from '../../modelo/actividades/reporte-actividad';
@@ -16,8 +16,9 @@ export class ConsultaActividadComponent implements OnInit {
   semana: Semana;
 
   constructor(
-    private actividadService: ReporteActividadService,
-    private routeParams: RouteParams) {
+    private actividadService: ReporteActividadService
+    , private routeParams: RouteParams
+    , private router: Router) {
     this.semana = new Semana();
   }
 
@@ -25,8 +26,8 @@ export class ConsultaActividadComponent implements OnInit {
 
   ngOnInit() {
     let fechaActividad = new Date();
-    if (this.routeParams.get("fechaActividad") != null) {
-      fechaActividad = new Date(this.routeParams.get("fechaActividad"));
+    if (this.routeParams.get("fecha") != null) {
+      fechaActividad = new Date(this.routeParams.get("fecha"));
     }
     this.consultar(fechaActividad, 0);
   }
@@ -45,14 +46,31 @@ export class ConsultaActividadComponent implements OnInit {
   }
 
   consultar(fechaActividad: any, incrementar: any) {
-    let milisegundos:any;
+    let milisegundos: any;
     if (fechaActividad.getTime) {
-      milisegundos = fechaActividad.getTime() + (incrementar * 100 * 60 * 60 * 24);
+      milisegundos = fechaActividad.getTime() + (incrementar * 1000 * 60 * 60 * 24);
     } else {
-      milisegundos = fechaActividad + (incrementar * 100 * 60 * 60 * 24);
+      milisegundos = fechaActividad + (incrementar * 1000 * 60 * 60 * 24);
     }
     let fechaModificada = new Date(milisegundos);
     this.consultarActividades(fechaModificada);
     this.consultarSemana(fechaModificada);
+  }
+
+  editar(idActividad: Number) {
+    this.router.navigate(["EdicionActividad", { id: idActividad }]);
+  }
+
+  eliminar(idActividad: Number) {
+    if (confirm("¿Esta seguro que desea eliminar la actividad?")) {
+      this.actividadService.eliminarActividad(idActividad).subscribe(
+        resultado => this.postEliminar(resultado)
+        , error => this.mensajeError = error
+      )
+    }
+  }
+
+  private postEliminar(resultado: Boolean) {
+    this.consultarActividades(this.semana.fechaFinal);
   }
 }

@@ -21,8 +21,8 @@
         <td>{{a.nbHoras}}</td>
         <td>{{a.vrDescripcion}}</td>
         <td>
-          <a href="javascript:void(0)" title="Modificar"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> &nbsp;
-          <a href="javascript:void(0)" title="Eliminar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          <a href="javascript:void(0)" title="Modificar" (click)="editar(a.nbId)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> &nbsp;
+          <a href="javascript:void(0)" title="Eliminar" (click)="eliminar(a.nbId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
         </td>
       </tr>
     </tbody>

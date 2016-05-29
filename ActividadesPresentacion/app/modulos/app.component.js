@@ -43,12 +43,17 @@ var AppComponent = (function () {
                 component: registro_actividad_component_1.RegistroActividadComponent
             },
             {
+                path: '/edicionactividad/:id',
+                name: 'EdicionActividad',
+                component: registro_actividad_component_1.RegistroActividadComponent
+            },
+            {
                 path: '/consultaactividad',
                 name: 'ConsultaActividad',
                 component: consulta_actividad_component_1.ConsultaActividadComponent
             },
             {
-                path: '/consultaactividadfecha/:id',
+                path: '/consultaactividadfecha/:fecha',
                 name: 'ConsultaActividadFecha',
                 component: consulta_actividad_component_1.ConsultaActividadComponent
             },

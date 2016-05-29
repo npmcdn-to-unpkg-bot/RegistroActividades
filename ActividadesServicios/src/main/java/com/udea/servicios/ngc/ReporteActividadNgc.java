@@ -5,9 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -79,5 +81,28 @@ public class ReporteActividadNgc implements ReporteActividadNgcInt {
 			expNgc.setMensajeUsuario("Error consultado la semana");
 			throw expNgc;
 		}
+	}
+	
+	@RequestMapping(value = "/consultarPorId/{id}", method = RequestMethod.GET)
+	public TbReporteActividad consultarPorId(@PathVariable("id") long idActividad) throws ExcepcionNgc{
+		try {
+			return reporteActividadDao.consultarPorId(idActividad);
+		} catch (Exception e) {
+			ExcepcionNgc expNgc = new ExcepcionNgc(e);
+			expNgc.setMensajeUsuario("Error consultado la semana");
+			throw expNgc;
+		}
+	}
+
+	@RequestMapping(value = "/eliminar/{id}", method = RequestMethod.GET)
+	public void eliminar(@PathVariable("id") long idActividad) throws ExcepcionNgc {
+		try {
+			reporteActividadDao.eliminar(idActividad);
+		} catch (Exception e) {
+			ExcepcionNgc expNgc = new ExcepcionNgc(e);
+			expNgc.setMensajeUsuario("Error consultado la semana");
+			throw expNgc;
+		}
+		
 	}
 }

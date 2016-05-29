@@ -13,15 +13,16 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var reporte_actividad_service_1 = require('../../servicios/actividades/reporte-actividad.service');
 var semana_1 = require('../../modelo/actividades/semana');
 var ConsultaActividadComponent = (function () {
-    function ConsultaActividadComponent(actividadService, routeParams) {
+    function ConsultaActividadComponent(actividadService, routeParams, router) {
         this.actividadService = actividadService;
         this.routeParams = routeParams;
+        this.router = router;
         this.semana = new semana_1.Semana();
     }
     ConsultaActividadComponent.prototype.ngOnInit = function () {
         var fechaActividad = new Date();
-        if (this.routeParams.get("fechaActividad") != null) {
-            fechaActividad = new Date(this.routeParams.get("fechaActividad"));
+        if (this.routeParams.get("fecha") != null) {
+            fechaActividad = new Date(this.routeParams.get("fecha"));
         }
         this.consultar(fechaActividad, 0);
     };
@@ -38,21 +39,33 @@ var ConsultaActividadComponent = (function () {
     ConsultaActividadComponent.prototype.consultar = function (fechaActividad, incrementar) {
         var milisegundos;
         if (fechaActividad.getTime) {
-            milisegundos = fechaActividad.getTime() + (incrementar * 100 * 60 * 60 * 24);
+            milisegundos = fechaActividad.getTime() + (incrementar * 1000 * 60 * 60 * 24);
         }
         else {
-            milisegundos = fechaActividad + (incrementar * 100 * 60 * 60 * 24);
+            milisegundos = fechaActividad + (incrementar * 1000 * 60 * 60 * 24);
         }
         var fechaModificada = new Date(milisegundos);
         this.consultarActividades(fechaModificada);
         this.consultarSemana(fechaModificada);
+    };
+    ConsultaActividadComponent.prototype.editar = function (idActividad) {
+        this.router.navigate(["EdicionActividad", { id: idActividad }]);
+    };
+    ConsultaActividadComponent.prototype.eliminar = function (idActividad) {
+        var _this = this;
+        if (confirm("¿Esta seguro que desea eliminar la actividad?")) {
+            this.actividadService.eliminarActividad(idActividad).subscribe(function (resultado) { return _this.postEliminar(resultado); }, function (error) { return _this.mensajeError = error; });
+        }
+    };
+    ConsultaActividadComponent.prototype.postEliminar = function (resultado) {
+        this.consultarActividades(this.semana.fechaFinal);
     };
     ConsultaActividadComponent = __decorate([
         core_1.Component({
             selector: 'consulta-actividad',
             templateUrl: 'app/modulos/actividades/consulta-actividad.component.html'
         }), 
-        __metadata('design:paramtypes', [reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [reporte_actividad_service_1.ReporteActividadService, router_deprecated_1.RouteParams, router_deprecated_1.Router])
     ], ConsultaActividadComponent);
     return ConsultaActividadComponent;
 }());
