@@ -57,12 +57,19 @@ export class ConsultaActividadComponent implements OnInit {
     this.consultarSemana(fechaModificada);
   }
 
+  consultarPorFecha(fecha: any) {
+    let fechaConsulta = new Date(fecha);
+    fechaConsulta = new Date(fechaConsulta.getTime() + (1000 * 60 * 60 * 24));
+    this.consultarActividades(fechaConsulta);
+    this.consultarSemana(fechaConsulta);
+  }
+
   editar(idActividad: Number) {
     this.router.navigate(["EdicionActividad", { id: idActividad }]);
   }
 
   eliminar(idActividad: Number) {
-    if (confirm("¿Esta seguro que desea eliminar la actividad?")) {
+    if (confirm("¿Esta seguro que desea eliminar el reporte de actividad?")) {
       this.actividadService.eliminarActividad(idActividad).subscribe(
         resultado => this.postEliminar(resultado)
         , error => this.mensajeError = error

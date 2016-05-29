@@ -48,12 +48,18 @@ var ConsultaActividadComponent = (function () {
         this.consultarActividades(fechaModificada);
         this.consultarSemana(fechaModificada);
     };
+    ConsultaActividadComponent.prototype.consultarPorFecha = function (fecha) {
+        var fechaConsulta = new Date(fecha);
+        fechaConsulta = new Date(fechaConsulta.getTime() + (1000 * 60 * 60 * 24));
+        this.consultarActividades(fechaConsulta);
+        this.consultarSemana(fechaConsulta);
+    };
     ConsultaActividadComponent.prototype.editar = function (idActividad) {
         this.router.navigate(["EdicionActividad", { id: idActividad }]);
     };
     ConsultaActividadComponent.prototype.eliminar = function (idActividad) {
         var _this = this;
-        if (confirm("¿Esta seguro que desea eliminar la actividad?")) {
+        if (confirm("¿Esta seguro que desea eliminar el reporte de actividad?")) {
             this.actividadService.eliminarActividad(idActividad).subscribe(function (resultado) { return _this.postEliminar(resultado); }, function (error) { return _this.mensajeError = error; });
         }
     };
